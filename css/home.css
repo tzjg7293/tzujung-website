@@ -16,15 +16,17 @@ body
 
 header
 {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     width: 100%;
     margin: auto;
-    padding: 30px 65px;
+    padding: 15px 65px;
     display: flex;
-    /* justify-content: space-between; */
     z-index: 10000;
+}
+header.scroll-active
+{
 }
 header .logo
 {
@@ -152,6 +154,9 @@ section img#moon
 section img#mountains_front
 {
     z-index: 10;
+    top: 280px;
+    width: 100%;
+    opacity: 0.65;
 }
 #text
 {
@@ -168,11 +173,11 @@ section img#mountains_front
 {
     text-decoration: none;
     display: inline-block;
-    padding: 8px 30px;
+    padding: 6px 26px;
     border-radius: 40px;
     background: white;
     color: #2b1055;
-    font-size: 1.5em;
+    font-size: 1.4em;
     z-index: 11;
     transform: translateY(150px);
 }
@@ -181,7 +186,8 @@ section img#mountains_front
 {
     position: relative;
     padding: 100px;
-    background-color: #1c0522;
+    background-color: #1c0522; 
+    /* 1c0522 */
 }
 .sec h2
 {

@@ -35,7 +35,7 @@
         </div>
 
         <div class="logo">
-            <a href = "home.html" class = ""><img src="img/logo.png" width="50px"></a>
+            <a href = "home.html" class = ""><img src="img/logo.png" width="60px"></a>
         </div>
 
         <div class="social">
@@ -85,14 +85,26 @@
         // Let stars move across sky as you scroll
         window.addEventListener('scroll', function(){
             let value = window.scrollY;
+            console.log(value);
             stars.style.left = value * 0.25 + 'px';
             moon.style.top = value * 1.05 + 'px';
             mountains_behind.style.top = value * 0.5 + 'px';
-            mountains_front.style.left = value * 0 + 'px';
+            mountains_front.style.width = 100 + value / 15 + "%";
             text.style.marginRight = value * 4 + 'px';
             text.style.marginTop = value * 1.5 + 'px';
             btn.style.marginTop = value * 1.5 + 'px';
-            header.style.top = value * 0.5 + 'px';
+            // header.style.top = value * 0.5 + 'px';
+            console.log("ScrollY: " + scrollY)
+            if(window.scrollY > 100)
+            {
+                header.classList.add('scroll-active');
+                header.style.backgroundColor = "rgb(28,7,49," + value / 5 * 0.01;
+                console.log("opacity = " + header.style.backgroundColor);
+            }
+            else
+            {
+                header.style.backgroundColor = "rgb(28,5,34,0)";
+            }
         })
     </script> 
 </body>
