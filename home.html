@@ -5,18 +5,23 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Sydney Tzu-Jung Fang's Website</title>
+    <title>Sydney Fang</title>
 
     <!-- Search optimization -->
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Bootstrap and JS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
     <!-- CSS Style sheets -->
     <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" href="css/timeline.css">
     <!-- Fonts -->
 
     <!-- Favicons -->
@@ -25,9 +30,9 @@
 
 <body>
     <header id="header" class="">
-        <div class = "navbar">
+        <div class="navbar">
             <ul>
-                <li><a class="" href="work.html">Work</a></li>
+                <li><a class="" href="#sec">Work</a></li>
                 <li><a class="" href="about.html">About</a></li>
                 <li><a class="" href="blog.html">Blog</a></li>
                 <li><a class="" href="contact.html">Contact</a></li>
@@ -35,7 +40,7 @@
         </div>
 
         <div class="logo">
-            <a href = "home.html" class = ""><img src="img/logo.png" width="50px"></a>
+            <a href="home.html" class=""><img src="img/logo.png" width="50px"></a>
         </div>
 
         <div class="social">
@@ -44,34 +49,167 @@
             <a href="#" class="fa fa-instagram"><i class=""></i></a>
         </div>
     </header>
-    <section>
-        <img src="img/stars.png" id = "stars">
-        <img src="img/moon.png" id = "moon">
-        <img src="img/mountains_behind.png" id = "mountains_behind">
-        <h2 id = "text" class = "intro"><span>Hi! My name is</span><br>Sydney<br>Tzu-Jung Fang</h2>
-        <a href = "#sec" id = "btn">My works</a>
-        <img src="img/mountains_front.png" id = "mountains_front">
+    <section class = "front-page">
+        <img src="img/stars.png" id="stars">
+        <img src="img/moon.png" id="moon">
+        <img src="img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text" class="intro"><span>Hi! My name is</span><br>Sydney<br>Tzu-Jung Fang</h2>
+        <a href="home.html#sec" id="btn">My works</a>
+        <img src="img/mountains_front.png" id="mountains_front">
     </section>
-    <div class = "sec" id = "sec">
-        <h2>Parallel Scrolling Effects</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit cum minus sed, ipsam neque esse numquam, labore, nulla cumque officiis. 
-            Nesciunt officia voluptas temporibus deleniti consequuntur tempora sequi reiciendis.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Aut incidunt nihil omnis quam doloremque quod harum nobis cumque, perferendis nemo eos corrupti temporibus aperiam non praesentium voluptatem cum iusto iste?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit cum minus sed, ipsam neque esse numquam, labore, nulla cumque officiis. 
-            Nesciunt officia voluptas temporibus deleniti consequuntur tempora sequi reiciendis.
-            <br><br>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit cum minus sed, ipsam neque esse numquam, labore, nulla cumque officiis. 
-            Nesciunt officia voluptas temporibus deleniti consequuntur tempora sequi reiciendis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit cum minus sed, ipsam neque esse numquam, labore, nulla cumque officiis. 
-            Nesciunt officia voluptas temporibus deleniti consequuntur tempora sequi reiciendis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit cum minus sed, ipsam neque esse numquam, labore, nulla cumque officiis. 
-            Nesciunt officia voluptas temporibus deleniti consequuntur tempora sequi reiciendis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit cum minus sed, ipsam neque esse numquam, labore, nulla cumque officiis. 
-            Nesciunt officia voluptas temporibus deleniti consequuntur tempora sequi reiciendis.
-
-        </p>
-    </div>
+    <!-- <div class="sec" id="sec"> -->
+        <!-- Work timeline -->
+        <div class="timeline-container" id="timeline-1">
+            <div class="timeline-header">
+                <h2 class="timeline-header__title">Experience</h2>
+                <h3 class="timeline-header__subtitle">Related work experience</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-text="DATE"> <!--Canadian Space Agency (CSA)&#xa;&&#xa;Students for the Exploration&#xa;and Development of Space (SEDS-Canada)-->
+                    <div class="timeline__content">
+                        <!-- <img class="timeline__img"
+                            src="http://i.cdn.ensonhaber.com/resimler/diger/ataturk_3473.jpg" /> -->
+                        <div class="timeline__content"></div>
+                        <h2 class="timeline-content-title">Canadian Stratospheric Balloon Experiment Design Challenge (CAN-SBX) - 1st Place</h2>
+                        <p class="timeline-content-desc">Canadian Space Agency & Students for the Exploration and Development of Space (SEDS-Canada)</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://gazetemanifesto.com/wp-content/uploads/2015/11/mustafa-kemal.jpg" />
+                        <h2 class="timeline-content-title">1893</h2>
+                        <p class="timeline-content-desc">First enrolled in a traditionalreligious school, he soon
+                            switched
+                            to a modern school. In 1893, he entered a military highschool where his mathematics teacher
+                            gave
+                            him the second name Kemal (meaning perfection)in recognition of young Mustafa's superior
+                            achievement.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/20/Ataturk-1930-amongpublic.jpg" />
+                        <h2 class="timeline-content-title">1905</h2>
+                        <p class="timeline-content-desc">In 1905, Mustafa Kemal graduated from the War Academy in
+                            Istanbul
+                            with the rank of Staff Captain. Posted in Damascus, he started with several colleagues, a
+                            clandestinesociety called "Homeland and Freedom" to fight against the Sultan'sdespotism.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://cdn.yemek.com/uploads/2014/11/ataturk-10-kasim.jpg" />
+                        <h2 class="timeline-content-title">1908</h2>
+                        <p class="timeline-content-desc">In 1908 he helped the group of officers who toppled the
+                            Sultan.
+                            Mustafa Kemal'scareer flourished as he won his heroism in the far corners of the Ottoman
+                            Empire,including Albania and Tripoli. He also briefly served as a staff officer in Salonica
+                            andIstanbul and as a military attache in Sofia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://ataturk.istanbul.gov.tr/GalleryLibrary/12.jpg" />
+                        <h2 class="timeline-content-title">1915</h2>
+                        <p class="timeline-content-desc">In 1915, when Dardanelles campaign was launched, Colonel
+                            Mustafa
+                            Kemal became anational hero by winning successive victories and finally repelling the
+                            invaders.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://gcube.milliyet.com.tr/Detail/2016/01/04/ataturk-un-yeni-fotograflari-ataturk-mustafa-kemal-ataturk-1533128.jpg" />
+                        <h2 class="timeline-content-title">1916</h2>
+                        <p class="timeline-content-desc">Promotedto general in 1916, at age 35, he liberated two major
+                            provinces in eastern Turkey thatyear. In the next two years, he served as commander of
+                            several
+                            Ottoman armies inPalestine, Aleppo, and elsewhere, achieving another major victory by
+                            stopping
+                            the enemyadvance at Aleppo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://manisanokta.com/wp-content/uploads/2014/07/ataturk-20.jpg" />
+                        <h2 class="timeline-content-title">1919</h2>
+                        <p class="timeline-content-desc">On May 19, 1919, Mustafa Kemal Pasha landed in the Black Sea
+                            port
+                            of Samsun to startthe War of Independence. In defiance of the Sultan's government, he
+                            rallied a
+                            liberationarmy in Anatolia and convened the Congress of Erzurum and Sivas which established
+                            thebasis for the new national effort under his leadership.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://www.volpeypir.com/upload/3732.jpg" />
+                        <h2 class="timeline-content-title">1920</h2>
+                        <p class="timeline-content-desc">
+                            On April 23, 1920, the GrandNational Assembly was inaugurated. Mustafa Kemal Pasha was
+                            elected
+                            to its Presidency.
+                            Fighting on many fronts, he led his forces to victory against rebels and invadingarmies.
+                            Following the Turkish triumph at the two major battles at Inonu in Western Turkey,the Grand
+                            National Assembly conferred on Mustafa Kemal Pasha the title ofCommander-in-Chief with the
+                            rank
+                            of Marshal.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://sanatkaravani.com/wp-content/uploads/2015/11/ataturk-4.jpg" />
+                        <h2 class="timeline-content-title">1922</h2>
+                        <p class="timeline-content-desc">At the end of August 1922, the Turkish armieswon their
+                            ultimate
+                            victory. Within a few weeks, the Turkish mainland was completelyliberated, the armistice
+                            signed,
+                            and the rule of the Ottoman dynasty abolished</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="https://turkcetarih.com/wp-content/uploads/2015/05/Atat%C3%BCrkveCumhuriyet.jpg" />
+                        <h2 class="timeline-content-title">1923</h2>
+                        <p class="timeline-content-desc">In July 1923, the national government signed the Lausanne
+                            Treaty
+                            with Great Britain,France, Greece, Italy, and others. In mid-October, Ankara became the
+                            capital
+                            of the new Turkish State. On October 29, the Republic was proclaimed and Mustafa Kemal Pasha
+                            wasunanimously elected President of the Republic.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://pbs.twimg.com/media/Cw69H8pXUAEaSqa.jpg" />
+                        <h2 class="timeline-content-title">1934</h2>
+                        <p class="timeline-content-desc">
+                            The account of Atatürk's fifteen year Presidency is a saga of dramatic modernization.With
+                            indefatigable determination, he created a new political and legal system, abolished the
+                            Caliphate and made both government and education secular, gave equal rights to women,changed
+                            the
+                            alphabet and the attire, and advanced the arts and the sciences, agricultureand industry.
+                            In 1934, when the surname law was adopted, the national parliament gave him the name
+                            <i><strong>"Atatürk" (Father of the Turks)</strong></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="http://www.bik.gov.tr/wp-content/uploads/2016/11/20161110_2_20037273_15856882.jpg?fit=1024%2C863" />
+                        <h2 class="timeline-content-title">1938</h2>
+                        <p class="timeline-content-desc">On November 10, 1938, following an illness of a few months,
+                            the
+                            national liberator and the Father of modern Turkey died. But his legacy to his people and to
+                            the
+                            world endures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
 
     <script>
         let stars = document.getElementById("stars");
@@ -83,7 +221,7 @@
         let header = document.querySelector('header');
 
         // Let stars move across sky as you scroll
-        window.addEventListener('scroll', function(){
+        window.addEventListener('scroll', function () {
             let value = window.scrollY;
             console.log(value);
             stars.style.left = value * 0.25 + 'px';
@@ -95,18 +233,17 @@
             btn.style.marginTop = value * 1.5 + 'px';
             // header.style.top = value * 0.5 + 'px';
             console.log("ScrollY: " + scrollY)
-            if(window.scrollY > 50)
-            {
+            if (window.scrollY > 50) {
                 header.classList.add('scroll-active');
-                header.style.backgroundColor = "rgb(45,21,88," + value / 5 * 0.01;
+                header.style.backgroundColor = "rgb(16, 3, 37," + value / 5 * 0.01;
                 console.log("opacity = " + header.style.backgroundColor);
             }
-            else
-            {
+            else {
                 header.style.backgroundColor = "rgb(108, 74, 182,0)";
             }
         })
-    </script> 
+    </script>
+    <script src="js/timeline.js"></script>
 </body>
 
 </html>
