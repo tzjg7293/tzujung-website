@@ -27,7 +27,7 @@ header
     left: 0px;
     width: 100%;
     margin: auto;
-    padding: 20px 40px;
+    padding: 13px 40px;
     display: flex;
     z-index: 10000;
 }
@@ -66,7 +66,8 @@ header ul li a
 {
     padding: 7px 16px;
     text-decoration: none;
-    color: white;
+    /* color: white; */
+    color: black;
     border-radius: 20px;
 }
 header ul li a:hover, header ul li a.active
@@ -112,10 +113,6 @@ header div.social
     background: #3B5998;
     color: white;
 }  
-.fa-twitter {
-background: #55ACEE;
-color: white;
-}
 /***************************************************/
 
 section
@@ -137,7 +134,7 @@ section::before
     width: 100%;
     height: 100px;
     /* background: linear-gradient(to top, #f7ecfb, transparent); */
-    background: linear-gradient(to top, #e3c0c0fb, transparent);
+    /* background: linear-gradient(to top,rgba(255, 255, 255, 0.978), transparent); */
     z-index: 1000;
     margin: 0;
     padding: 0;
