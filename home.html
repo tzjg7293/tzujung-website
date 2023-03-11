@@ -31,7 +31,7 @@
 <body>
     <header id="header" class="">
         <div class="navbar">
-            <ul>
+            <ul class = "nav-li">
                 <li><a class="" href="#sec">Work</a></li>
                 <li><a class="" href="about.html">About</a></li>
                 <li><a class="" href="blog.html">Blog</a></li>
@@ -237,6 +237,7 @@
         let text = document.getElementById("text");
         let btn = document.getElementById("btn");
         let header = document.querySelector('header');
+        let navbar_li = $(".navbar ul li");
 
         // Let stars move across sky as you scroll
         window.addEventListener('scroll', function () {
@@ -261,11 +262,13 @@
                 }
                 else{
                     header.style.backgroundColor = "rgb(255, 255, 255, 0.5)"
+                    $('header ul li a').css('color', 'black');
                 }
             }
             else{
                 // header.style.backgroundColor = "rgb(129, 112, 145, 0)";
                 header.style.backgroundColor = "rgb(255, 255, 255, 0)";
+                $('header ul li a').css('color', 'white');
             }
         })
     </script>
