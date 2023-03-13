@@ -34,7 +34,7 @@
 
         if (i == itemLength - 2 && (pos + screen_height/3) > item_middle) {
           selectors.item.removeClass(selectors.activeClass);
-          selectors.id.css("background-image", "url(" + selectors.item.last().find(selectors.img).attr('src') + ")");
+          selectors.id.css("background-image", "url(" + selectors.item.last().find(selectors.img).attr('src') + ")"); //not sure what this is for, but it removes the after-lining of the box after transition
           selectors.item.last().addClass(selectors.activeClass)
         } else if ((pos + screen_height/3) <= max - 40 && (pos + screen_height/3) >= min) {
           selectors.id.css("background-image", "url(" + $(this).find(selectors.img).attr('src') + ")");

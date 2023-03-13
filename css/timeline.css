@@ -10,7 +10,7 @@
 .timeline-content-title {
   font-weight: normal;
   font-size: 40px;
-  /* transition: .4s; */
+  transition: .4s;
   box-sizing: border-box;
   font-family: "Pathway Gothic One", sans-serif;
   color: #fff;
@@ -113,10 +113,10 @@
     padding-bottom: 40px;
   }
 }
-.timeline__img {
+/* .timeline__img {
   max-width: 100%;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-}
+} */
 .timeline-container {
   width: 100%;
   position: relative;
