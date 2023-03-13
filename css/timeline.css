@@ -10,8 +10,7 @@
 .timeline-content-title {
   font-weight: normal;
   font-size: 40px;
-  transition: .4s;
-  padding: 0;
+  /* transition: .4s; */
   box-sizing: border-box;
   font-family: "Pathway Gothic One", sans-serif;
   color: #fff;
@@ -88,6 +87,7 @@
 }
 .timeline-item--active:before {
   top: 50%;
+  /* top: 75%; */
   transition: .3s all .2s;
   opacity: 1;
   white-space: pre;
