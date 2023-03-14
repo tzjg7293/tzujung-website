@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+/* @import url("https://fonts.googleapis.com/css?family=Poppins|Pathway+Gothic+One"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 .timeline {
   display: flex;
   margin: 0 auto;
@@ -8,12 +10,12 @@
   position: relative;
 }
 .timeline-content-title {
-  font-weight: normal;
-  font-size: 40px;
+  font-weight: 500;
+  font-size: 30px;
   transition: .4s;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Pathway Gothic One", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #fff;
 }
 .timeline-content-desc {
@@ -22,7 +24,7 @@
   box-sizing: border-box;
   /* color: rgba(255, 255, 255, 0.7);  ORIGINAL COLOUR */
   color: white;
-  font-family: Cardo;
+  font-family: Montserrat;
   font-weight: normal;
   line-height: 25px;
 }
@@ -52,7 +54,7 @@
   display: flex;
   position: relative;
   transform: translateY(-80px);
-  background-color: black;
+  background-color: #f197a3;
 }
 .timeline-item:before {
   content: attr(data-text);
@@ -61,7 +63,7 @@
   position: absolute;
   color: rgba(255, 255, 255, 0.5);
   font-size: 20px;
-  font-family: "Pathway Gothic One", sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-left: 2px solid rgba(255, 255, 255, 0.5);
   top: 70%;
   margin-top: -5px;
@@ -131,7 +133,7 @@
   width: 100%;
   height: 100%;
   /* background: #e3c0c0; */
-  background: #ef8e73;
+  background: #446594;
   content: "";
 }
 .timeline-header {
@@ -141,15 +143,15 @@
   position: relative;
 }
 .timeline-header-title {
-  color: black;
+  color: white;
   font-size: 46px;
-  font-family: Cardo;
-  font-weight: normal;
+  font-family: Montserrat;
+  font-weight: 600;
   margin: 0;
 }
 .timeline-header__subtitle {
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Pathway Gothic One", sans-serif;
+  color: white;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   letter-spacing: 5px;
   margin: 10px 0 0 0;
@@ -163,5 +165,5 @@
 .demo-footer a {
   color: #999;
   display: inline-block;
-  font-family: Cardo;
+  font-family: Montserrat;
 }

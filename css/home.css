@@ -162,11 +162,11 @@ section img#mountains_front
 }
 #text
 {
-    position: absolute;
+    /* position: absolute; */
     color: white;
     font-size: 5vw;
     z-index: 9;
-    width: 50%;
+    /* width: 50%; */
     text-align: center;
 }
 section h2 span
@@ -183,24 +183,6 @@ section h2 span
     color: #2b1055;
     font-size: 1.4em;
     z-index: 11;
-    transform: translateY(170px);
+    /* transform: translateY(170px); */
+    margin: 5;
 }
-
-/* .sec */
-/* { */
-    /* position: relative;
-    padding: 100px;
-    background-color: #bbccf0;  */
-    /* Original: 1c0522 */
-/* } */
-/* .sec h2
-{
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    color: black;
-}
-.sec p
-{
-    font-size: 1.2em;
-    color: black;
-} */
