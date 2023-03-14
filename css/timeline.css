@@ -51,9 +51,9 @@
   width: calc(50% - 40px);
   display: flex;
   position: relative;
-  transform: translateY(-80px);
+  /* transform: translateY(-80px); */
   background-color: #f197a3;
-  /* transform: translateY(-20px); */
+  transform: translateY(-20px);
 }
 .timeline-item:before {
   content: attr(data-text);
