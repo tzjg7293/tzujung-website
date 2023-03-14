@@ -53,16 +53,20 @@
         <img src="img/stars.png" id="stars">
         <img src="img/moon.png" id="moon">
         <img src="img/mountains_behind.png" id="mountains_behind">
-        <h2 id="text" class="intro"><span>Hi! My name is</span><br>Sydney<br>Tzu-Jung Fang</h2>
-        <a href="home.html#sec" id="btn">My works</a>
+        <!-- <h2 id="text" class=""><span>Hi! My name is</span><br>Sydney<br>Tzu-Jung Fang</h2>
+        <a href="home.html#sec" class = "m-3" id="btn">My works</a> -->
+        <div class = "row">
+            <div id="text" class=""><span>Hi! My name is</span><br>Sydney<br>Tzu-Jung Fang</div>
+            <div><a href="home.html#sec" class = "m-3" id="btn">My works</a></div>
+        </div>
         <img src="img/mountains_front.png" id="mountains_front">
     </section>
     <section class="about-me">
         <div class="summary">
             <h1>About me</h1>
-            <p>Full name</p>
+            <p class = "fw-bold">Full name</p>
             <p>Sydney Tzu-Jung Fang (方姿蓉)</p>
-            <p>Email</p>
+            <p class = "fw-bold">Email</p>
             <p>sydney.tj.fang@gmail.com</p>
         </div>
         <div class="bio">
@@ -81,9 +85,8 @@
             <div class="timeline-item" data-text="OCT 2021 - PRESENT&#xa;Canadian Space Agency &&#xa;Students for the Exploration and&#xa;Development of Space (SEDS-Canada)">
                 <!--Canadian Space Agency (CSA)&#xa;&&#xa;Students for the Exploration&#xa;and Development of Space (SEDS-Canada)-->
                 <div class="timeline__content">
-                    <!-- <img class="timeline__img"
-                            src="http://i.cdn.ensonhaber.com/resimler/diger/ataturk_3473.jpg" /> -->
-                    <h2 class="timeline-content-title m-0">Canadian Stratospheric Balloon Experiment Design Challenge
+                    <!-- <img class="timeline__img" src="http://i.cdn.ensonhaber.com/resimler/diger/ataturk_3473.jpg" /> -->
+                    <h2 class="timeline-content-title m-0 text-uppercase m-0">Canadian Stratospheric Balloon Experiment Design Challenge <br>
                         (CAN-SBX) - 1st Place</h2>
                     <p class="timeline-content-desc fst-italic fs-5 mt-2 mb-3">Software engineer lead</p>
                 </div>
@@ -153,7 +156,7 @@
             mountains_front.style.width = 100 + value / 15 + "%";
             text.style.marginRight = value * 4 + 'px';
             text.style.marginTop = value * 1.5 + 'px';
-            btn.style.marginTop = value * 1.5 + 'px';
+            // btn.style.marginTop = value * 1.5 + 'px';
             console.log("ScrollY: " + scrollY)
             if (window.scrollY > 50) {
                 header.classList.add('scroll-active');
