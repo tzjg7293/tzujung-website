@@ -51,4 +51,4 @@
 
   }
 })(jQuery);
-$("#timeline-1").timeline();
+$("#timeline").timeline();

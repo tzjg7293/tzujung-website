@@ -10,23 +10,24 @@
   position: relative;
 }
 .timeline-content-title {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 30px;
   transition: .4s;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  color: #fff;
+  color: #446594;
 }
 .timeline-content-desc {
   margin: 0;
   font-size: 15px;
   box-sizing: border-box;
   /* color: rgba(255, 255, 255, 0.7);  ORIGINAL COLOUR */
-  color: white;
+  color: #446594;
   font-family: Montserrat;
   font-weight: normal;
   line-height: 25px;
 }
+/* timeline line itself */
 .timeline:before {
   position: absolute;
   left: 50%;
@@ -34,7 +35,7 @@
   height: 100%;
   margin-left: -1px;
   content: "";
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
 }
 @media only screen and (max-width: 767px) {
   .timeline:before {
@@ -55,7 +56,7 @@
   background-color: #f197a3;
   transform: translateY(-20px);
 }
-.timeline-item:before {
+.timeline-item:before{
   content: attr(data-text);
   letter-spacing: 3px;
   width: 100%;
@@ -70,12 +71,14 @@
   opacity: 0;
   right: calc(-100% - 56px );
 }
+
 .timeline-item:nth-child(even) {
   align-self: flex-end;
 }
 .timeline-item:nth-child(even):before {
   right: auto;
   text-align: right;
+  overflow-wrap: break-word;
   left: calc(-100% - 56px );
   padding-left: 0;
   border-left: none;
