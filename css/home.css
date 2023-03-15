@@ -86,11 +86,11 @@ header div.social
 }
 .intro
 {
-    
+    font-weight: 500;
 }
 .hello
 {
-
+    font-size: 0.6em;
 }
 
 /*********** Social media button styling ***********/

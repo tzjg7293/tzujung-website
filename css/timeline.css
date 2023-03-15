@@ -10,23 +10,24 @@
   position: relative;
 }
 .timeline-content-title {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 30px;
   transition: .4s;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  color: #fff;
+  color: #446594;
 }
 .timeline-content-desc {
   margin: 0;
   font-size: 15px;
   box-sizing: border-box;
   /* color: rgba(255, 255, 255, 0.7);  ORIGINAL COLOUR */
-  color: white;
+  color: #446594;
   font-family: Montserrat;
   font-weight: normal;
   line-height: 25px;
 }
+/* timeline line itself */
 .timeline:before {
   position: absolute;
   left: 50%;
@@ -34,48 +35,68 @@
   height: 100%;
   margin-left: -1px;
   content: "";
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
 }
 @media only screen and (max-width: 767px) {
   .timeline:before {
     left: 40px;
   }
 }
-.timeline-item {
+.timeline-content{
   padding: 30px;
   opacity: .3;
   border-radius: 3em;
-  filter: blur(2px);
+  /* filter: blur(2px); */
   transition: .5s;
   box-sizing: border-box;
   width: calc(50% - 40px);
   display: flex;
-  position: relative;
+  /* position: relative; */
   /* transform: translateY(-80px); */
   background-color: #f197a3;
-  transform: translateY(-20px);
+  /* transform: translateY(-20px); */
 }
-.timeline-item:before {
-  content: attr(data-text);
+.timeline-info-right{
+  /* content: attr(data-text); */
   letter-spacing: 3px;
-  width: 100%;
-  position: absolute;
-  color: rgba(255, 255, 255, 0.5);
+  width: 50%;
+  /* position: absolute; */
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: black;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   border-left: 2px solid rgba(255, 255, 255, 0.5);
-  top: 70%;
-  margin-top: -50px;
+  /* top: 70%; */
+  /* margin-top: -50px; */
   padding-left: 15px;
-  opacity: 0;
-  right: calc(-100% - 56px );
+  /* opacity: 0; */
+  /* right: calc(-100% - 56px ); */
 }
-.timeline-item:nth-child(even) {
+.timeline-info-left{
+  /* content: attr(data-text); */
+  letter-spacing: 3px;
+  width: 50%;
+  /* position: absolute; */
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: black;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  /* top: 70%; */
+  /* margin-top: -50px; */
+  padding-right: 15px;
+  /* opacity: 0; */
+  /* right: calc(-100% - 56px ); */
+}
+
+.timeline-item .timeline-content:nth-child(even) {
   align-self: flex-end;
+  float: right;
 }
-.timeline-item:nth-child(even):before {
+.timeline-item .timeline-content:nth-child(even):before {
   right: auto;
   text-align: right;
+  overflow-wrap: break-word;
   left: calc(-100% - 56px );
   padding-left: 0;
   border-left: none;
@@ -163,3 +184,4 @@
   display: inline-block;
   font-family: Montserrat;
 }
+
