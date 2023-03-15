@@ -25,7 +25,7 @@
   color: #446594;
   font-family: Montserrat;
   font-weight: normal;
-  line-height: 25px;
+  /* line-height: 25px; */
 }
 /* timeline line itself */
 .timeline:before {
@@ -50,7 +50,8 @@
   transition: .5s;
   box-sizing: border-box;
   width: calc(50% - 40px);
-  display: flex;
+  /* display: flex; */
+  flex-wrap: wrap;
   /* position: relative; */
   /* transform: translateY(-80px); */
   background-color: #f197a3;
