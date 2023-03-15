@@ -7,6 +7,9 @@
       img: ".timeline__img"
     };
 
+    var all_item = $('.timeline-item');
+    var itemLength = all_item.length;
+
     $(window).scroll(function () {
       var max, min;
       var screen_height = screen.height;
