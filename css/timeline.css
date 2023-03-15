@@ -21,10 +21,14 @@
   margin: 0;
   font-size: 15px;
   box-sizing: border-box;
-  /* color: rgba(255, 255, 255, 0.7);  ORIGINAL COLOUR */
-  color: #446594;
+  color: white;
+  display: inline;
+  background-color: #446594;
+  padding: 0.3em 0.8em;
+  border-radius: 0.8em;
+  /* color: #5a5f75; */
   font-family: Montserrat;
-  font-weight: normal;
+  font-weight: 500;
   /* line-height: 25px; */
 }
 /* timeline line itself */
@@ -79,6 +83,7 @@
   border-right: 2px solid rgba(255, 255, 255, 0.5);
   padding-right: 15px;
   opacity: 0;
+  flex-wrap: wrap;
   /* right: calc(-100% - 56px ); */
 }
 .date{
