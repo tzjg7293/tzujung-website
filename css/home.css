@@ -84,10 +84,6 @@ header div.social
     flex: 1;
     justify-content: flex-end;
 }
-.intro
-{
-    font-weight: 500;
-}
 .hello
 {
     font-size: 0.6em;
