@@ -170,6 +170,7 @@ section img#mountains_front
     color: white;
     font-size: 5vw;
     z-index: 9;
+    font-weight: 500;
     /* width: 50%; */
     text-align: center;
 }
