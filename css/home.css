@@ -207,3 +207,31 @@ section h2 span
     width: 120%;
     margin-left: -15%;
 }
+.button
+{
+    display: inline;
+    background-color: #f197a3;
+    margin-top: 2em;
+    padding: 0.3em 0.8em;
+    border-radius: 0.8em;
+
+}
+#resume
+{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.button:hover, #resume:hover
+{
+    color: #f197a3;
+    background-color: white;
+}
+.click
+{
+    position: relative;
+    top: -2px;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+}
