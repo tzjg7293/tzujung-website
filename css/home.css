@@ -143,7 +143,7 @@ section::before
     margin: 0;
     padding: 0;
 }
-section img
+section img:not(#sydney-profile-img)
 {
     position: absolute;
     top: 0;
@@ -189,4 +189,24 @@ section h2 span
     z-index: 11;
     /* transform: translateY(170px); */
     margin: 5;
+}
+.profile-img
+{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sydney-profile-img
+{
+    /* display: inline; */
+    /* margin: 0 auto; */
+    /* object-fit: cover; */
+    height: auto;
+    width: 120%;
+    margin-left: -15%;
 }
