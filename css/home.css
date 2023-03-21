@@ -130,19 +130,6 @@ section
     align-items: center;
     overflow: hidden;
 }
-section::before
-{   
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    /* background: linear-gradient(to top, #f7ecfb, transparent); */
-    /* background: linear-gradient(to top,rgba(255, 255, 255, 0.978), transparent); */
-    z-index: 1000;
-    margin: 0;
-    padding: 0;
-}
 section img:not(#sydney-profile-img)
 {
     position: absolute;
