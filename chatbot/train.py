@@ -126,6 +126,6 @@ data = {
 }
 
 FILE = "chatbot/data/BaconChatbotData.pth" # Define a file name
-torch.save(data, FILE) # will save it as a pickle file
+torch.save(data, FILE) # will save it as a pickle file at the FILE location. THIS IS THE TRAINED MODEL
 
 print(f"Training complete. File saved to {FILE}")
