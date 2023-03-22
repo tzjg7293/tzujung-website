@@ -42,7 +42,7 @@ def get_response(msg):
     X = X.reshape(1, X.shape[0]) # reshape X - give it only 1 row b/c we only have 1 sample at a time; second parameter is columns, which is X.shape[0] since model expects it in these dimensions
     X = torch.from_numpy(X).to(device) # convert it to a torch tensor; using from_numpy b/c the bag_of_words function returns a numpy array
 
-    output = model(X) # This will give us a the prediction
+    output = model(X) # EXECUTE THE MODEL - This will give us a the prediction
     _, predicted = torch.max(output, dim=1)
 
     tag = tags[predicted.item()] # Get the actual tags by saying tag = tags of the index of the predicted item; predicted.item() is the class label so it's the class's (index) number; tag is the actual tag stored in the intents.json file eg. "greeting"

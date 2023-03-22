@@ -20,8 +20,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
     <!-- CSS Style sheets -->
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/timeline.css')}}">
     <!-- Fonts -->
 
     <!-- Favicons -->
@@ -40,7 +40,7 @@
         </div>
 
         <div class="logo">
-            <a href="index.html" class=""><img src="img/logo.png" width="50px"></a>
+            <a href="index.html" class=""><img src="{{url_for('static', filename = 'img/logo.png')}}" width="50px"></a>
         </div>
 
         <div class="social">
@@ -50,18 +50,18 @@
         </div>
     </header>
     <section class="front-page">
-        <img src="img/stars.png" id="stars">
-        <img src="img/moon.png" id="moon">
-        <img src="img/mountains_behind.png" id="mountains_behind">
+        <img src="{{url_for('static', filename = 'img/stars.png')}}" id="stars">
+        <img src="{{url_for('static', filename = 'img/moon.png')}}" id="moon">
+        <img src="{{url_for('static', filename = 'img/mountains_behind.png')}}" id="mountains_behind">
         <div class = "row">
             <div id="text" class=""><span class = "hello">Hi! My name is</span><br>Sydney<br>Tzu-Jung Fang</div>
             <!-- <div><a href="home.html#sec" class = "m-3" id="btn">My works</a></div> -->
         </div>
-        <img src="img/mountains_front.png" id="mountains_front">
+        <img src="{{url_for('static', filename = 'img/mountains_front.png')}}" id="mountains_front">
     </section>
     <section id = "about-me" class="about-me d-flex col">
         <div class="profile-img me-5">
-            <img id = "sydney-profile-img" src = "img/sydney-profile.png">
+            <img id = "sydney-profile-img" src = "{{url_for('static', filename = 'img/sydney-profile.png')}}">
         </div>
         <div class="summary">
             <h1>About me</h1>
@@ -85,7 +85,7 @@
             <h2 class="timeline-header-title">Experience</h2>
             <h3 class="timeline-header__subtitle mb-3">Related work and technical experience</h3>
             <div class = "button">
-                <a id = "resume" class = "" href = "pdf/sydney-resume.pdf" target="_blank" download>Download my resume<img class = "click align-self-center" src = "img/click.png"></a>
+                <a id = "resume" class = "" href = "{{url_for('static', filename = 'pdf/sydney-resume.png')}}" target="_blank" download>Download my resume<img class = "click align-self-center" src = "{{url_for('static', filename = 'img/click.png')}}"></a>
             </div>
         </div>
         <div class="timeline">
@@ -227,7 +227,7 @@
             }
         })
     </script>
-    <script src="js/timeline.js"></script>
+    <script src="{{url_for('static', filename = 'js/timeline.js')}}"></script>
 </body>
 
 </html>
