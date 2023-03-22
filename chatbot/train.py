@@ -6,6 +6,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
+from model import NeuralNetwork # Import our NeuralNetwork model from model.py
 
 with open('chatbot/intents.json', 'r') as f:
     intents = json.load(f)
@@ -24,7 +25,6 @@ for intent in intents['intents']: # for intent in the list of intents in the jso
         all_words.extend(w) # Using extend isntead of append b/c 'w' is already an array, so we don't want all_words to be an array of arrays
         xy.append((w, tag))
         
-print(xy)
 # Create the list of words that we want to ignore
 ignore_words = ['?', '!', '.', ',']
 
@@ -64,9 +64,62 @@ class ChatDataset(Dataset): # Create a new class called chatDataset that inherit
     def __len__(self):
         return self.n_samples
     
-    # Hyperparameters
-    batch_size = 8
+# Hyper-parameters (can be changed)
+batch_size = 8
+input_size = len(x_train[0]) # Length of each bag_of_words we created. In this case it has the same length as the all_words array, or we can use the first set of x_train data since they all have the same length
+hidden_size = 8
+output_size = len(tags) # Number of different classes aka tags that we have
+learning_rate = 0.001
+num_epochs = 1000 # Num of training iterations
+print(input_size, len(all_words))
+print(output_size, tags)
 
-    #  Check before running
-    dataset = ChatDataset()
-    train_loader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True, num_workers = 2) # Depending on num_workers, the more the faster it loads but takes more cpu
+#  Check before running
+dataset = ChatDataset()
+# training loader
+train_loader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True, num_workers = 0) # Depending on num_workers, the more the faster it loads but takes more cpu
+
+# If we have GPU available we can specify it here
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # If if we have cuda, push our model to it to use it, otherwise use cpu
+# Integrate model
+model = NeuralNetwork(input_size, hidden_size, output_size).to(device) # Push our model to either cuda or cpu depending on availability
+
+# Specify the loss and optimizer
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate) # We are optimizing the model.parameters(); lr = learning rate
+
+# Define the training epoch (loops)
+for epoch in range(num_epochs):
+    for (words, labels) in train_loader:
+        word = words.to(device) # we want to push it to the device
+        labels = labels.to(device)
+
+        # call the forward pass
+        outputs = model(words) # words as the input
+        loss = criterion(outputs, labels) # calculate the loss; outputs = predicted output; labels = actual labels
+
+        # backward pass and optimizer step
+        optimizer.zero_grad() # empty the gradient first
+        loss.backward() # to calculate back propagation
+        optimizer.step()
+
+    # Print this every 100 epoch (iterations)
+    if (epoch + 1) % 100 == 0:
+        print(f"epoch {epoch + 1} / {num_epochs}, loss = {loss.item():.4f}") # print as a f string the current epoch: (epoch + 1), and the total number of epochs (num_epochs); print loss item up to 4 decimal points
+
+print(f"final loss, loss = {loss.item():.4f}") # print the final loss - the lost at the end
+
+## SAVING THE TRAINED DATA
+# Create a dictionary to store different things about the model
+data = {
+    "model_state": model.state_dict(),
+    "input_size": input_size,
+    "output_size": output_size,
+    "hidden_size": hidden_size,
+    "all_words": all_words, # Store all the words we collected at the beginning
+    "tags": tags
+}
+
+FILE = "chatbot/data/BaconChatbotData.pth" # Define a file name
+torch.save(data, FILE) # will save it as a pickle file
+print(f"Training complete. File saved to {FILE}")
