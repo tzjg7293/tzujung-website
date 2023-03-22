@@ -3,7 +3,7 @@ import torch.nn as nn
 
 # Create a class called NeuralNetwork (can be any name) derived from nn.Module
 class NeuralNetwork(nn.Module):
-    # Define the innit which gets self
+    # Define the init which gets self
     def __init__(self, input_size, hidden_size, num_classes): # This will be a feed forward neural net with 2 hidden layers
         super(NeuralNetwork, self).__init__()
         # Create 3 linear layers - input_size and num_classes must be fixed but the hidden layer's sizes (hidden_size) can vary
