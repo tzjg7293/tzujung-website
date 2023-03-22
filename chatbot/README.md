@@ -15,3 +15,9 @@
 3. the output of the 1st hidden layer goes into the 2nd hidden layer
 4. the output of the second hidden layer is the number of different classes, which is the output size
 5. Apply softmax to the output to generate the probability of getting each different classes
+
+## Todo
+
+1. Create training data
+2. Create PyTorch model and train
+3. Save/load model and implement the chatbot so we can put the trained data into chatbot's function
