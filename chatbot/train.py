@@ -1,4 +1,4 @@
-## Load training data (the intent json file) 
+## Load training data (the intent json file) - NOTE: RERUN TRAINING FILE WHENEVER intents.json IS MODIFIED!
 import json
 import numpy as np
 import random
