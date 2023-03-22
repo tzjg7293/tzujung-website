@@ -67,6 +67,6 @@ class ChatDataset(Dataset): # Create a new class called chatDataset that inherit
     # Hyperparameters
     batch_size = 8
 
-     
+    #  Check before running
     dataset = ChatDataset()
     train_loader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True, num_workers = 2) # Depending on num_workers, the more the faster it loads but takes more cpu

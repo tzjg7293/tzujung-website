@@ -1,5 +1,4 @@
 ## Preprocessing techniques: ##
-
 import numpy as np
 import nltk
 # nltk.download('punkt')  # Only need to download for first time
