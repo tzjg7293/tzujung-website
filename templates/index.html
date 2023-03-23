@@ -22,6 +22,8 @@
     <!-- CSS Style sheets -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/home.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/timeline.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+
     <!-- Fonts -->
 
     <!-- Favicons -->
@@ -49,6 +51,31 @@
             <!-- <a href="#" class="fa fa-instagram"><i class=""></i></a> -->
         </div>
     </header>
+    <container>
+        <div class="chatbox">
+            <div class="chatbox-support">
+                <div class="chatbox-header">
+                    <div class="chatbox-image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    </div>
+                    <div class="chatbox-content--header">
+                        <h4 class="chatbox-heading--header">Chat support</h4>
+                        <p class="chatbox-description--header">Hi. My name is Sam. How can I help you?</p>
+                    </div>
+                </div>
+                <div class="chatbox-messages">
+                    <div></div>
+                </div>
+                <div class="chatbox-footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox-send--footer send-button">Send</button>
+                </div>
+            </div>
+            <div class="chatbox-button">
+                <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+            </div>
+        </div>
+    </container>
     <section class="front-page">
         <img src="{{url_for('static', filename = 'img/stars.png')}}" id="stars">
         <img src="{{url_for('static', filename = 'img/moon.png')}}" id="moon">
@@ -83,7 +110,7 @@
     <div class="timeline-container" id="timeline">
         <div class="timeline-header">
             <h2 class="timeline-header-title">Experience</h2>
-            <h3 class="timeline-header__subtitle mb-3">Related work and technical experience</h3>
+            <h3 class="timeline-header-subtitle mb-3">Related work and technical experience</h3>
             <div class = "button">
                 <a id = "resume" class = "" href = "{{url_for('static', filename = 'pdf/sydney-resume.png')}}" target="_blank" download>Download my resume<img class = "click align-self-center" src = "{{url_for('static', filename = 'img/click.png')}}"></a>
             </div>
@@ -93,7 +120,7 @@
             <div class="timeline-item d-flex flex-row justify-content-between">
                 <!--Canadian Space Agency (CSA)&#xa;&&#xa;Students for the Exploration&#xa;and Development of Space (SEDS-Canada)-->
                 <div class="timeline-content">
-                    <!-- <img class="timeline__img" src="http://i.cdn.ensonhaber.com/resimler/diger/ataturk_3473.jpg" /> -->
+                    <!-- <img class="timeline-img" src="http://i.cdn.ensonhaber.com/resimler/diger/ataturk_3473.jpg" /> -->
                     <h2 class="timeline-content-title text-uppercase mb-1">Canadian Stratospheric Balloon Experiment Design Challenge<br>(CAN-SBX) - <span class = "highlight">Winner</span></h2>
                     <!-- <div class = "button d-block"> -->
                         <a class = "link d-block mb-3" href = "https://www.asc-csa.gc.ca/eng/sciences/balloons/campaign-2022.asp">Government of Canada - CSA</a>
@@ -228,6 +255,10 @@
         })
     </script>
     <script src="{{url_for('static', filename = 'js/timeline.js')}}"></script>
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; // tells you the root of this script
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 
 </html>
