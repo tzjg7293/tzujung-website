@@ -159,7 +159,7 @@ section img#mountains_front
 }
 .hello
 {
-    font-size: 0.6em;
+font-size: 0.6em;
 }
 section h2 span
 {
@@ -184,7 +184,6 @@ section h2 span
     height: 300px;
     overflow: hidden;
     border-radius: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,7 +201,6 @@ section h2 span
     margin-top: 2em;
     padding: 0.3em 0.8em;
     border-radius: 0.8em;
-
 }
 #resume
 {
