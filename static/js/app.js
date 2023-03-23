@@ -39,7 +39,7 @@ class Chatbox{
     toggleState(chatbox)
     {
         this.state = !this.state;
-
+        console.log("worked");
         // show or hides the box
         if(this.state)
         {
@@ -77,7 +77,7 @@ class Chatbox{
             headers:
             {
                 "Content-type": "application/json" // specify json
-            },
+            }
         })
         // wait to receive the json response after sending POST request
         .then(r => r.json()) // extract the json obj
