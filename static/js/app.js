@@ -17,7 +17,7 @@ class Chatbox{
     {
         // Extract the arguments
         const{open_button, chatbox, send_button} = this.args;
-
+        console.log("testing");
         // add two click event listeners
         // open chatbox when clicked
         open_button.addEventListener("click", () => this.toggleState(chatbox));
@@ -72,11 +72,11 @@ class Chatbox{
         fetch($SCRIPT_ROOT + "/predict",
         {
             method: "POST", // define as a POST method
-            body: JSON.stringify({this.message: text1}), // stringify the message to a JSON object
+            body: JSON.stringify({message: text1}), // stringify the message to a JSON object
             mode: "cors", // allow Cros Origin Resource Sharing - need this if we are deploying FLASK completely separately from the html
             headers:
             {
-                "Content-type": "application/json" // specify json
+                "Content-Type": "application/json" // specify json
             }
         })
         // wait to receive the json response after sending POST request

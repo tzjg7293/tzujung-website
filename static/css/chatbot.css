@@ -3,13 +3,21 @@
     margin: 0;
     padding: 0;
 }
+*, html {
+    --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #581B98;
+}
 
 /* CHATBOX
 =============== */
 .chatbox {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
 }
 
 /* CONTENT IS CLOSE */
@@ -26,10 +34,9 @@
 
 /* CONTENT ISOPEN */
 .chatbox--active {
-    transform: translateY(-40px);
+    transform: translateY(-15px);
     z-index: 123456;
     opacity: 1;
-
 }
 
 /* BUTTON */
@@ -86,8 +93,7 @@
     height: 450px;
     width: 350px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
 }
 
 /* HEADER */
@@ -96,8 +102,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding: 15px 20px;
+    justify-content: left;
+    padding: 13px 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: var(--primaryBoxShadow);
@@ -108,13 +114,16 @@
 }
 
 .chatbox-heading--header {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
+    margin: 0;
 }
 
 .chatbox-description--header {
     font-size: .9rem;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 /* Messages */
@@ -150,7 +159,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 15px 15px;
     background: var(--secondaryGradient);
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
@@ -159,10 +168,11 @@
 }
 
 .chatbox-footer input {
+    font-size: 1rem;
     width: 80%;
     border: none;
-    padding: 10px 10px;
-    border-radius: 30px;
+    padding: 5px 10px;
+    border-radius: 10px;
     text-align: left;
 }
 
