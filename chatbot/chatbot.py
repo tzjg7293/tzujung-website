@@ -1,6 +1,6 @@
 import random # So we can select random choice(s) from the possible responses
 import json
-
+import yaml
 import torch
 
 from model import NeuralNetwork # import our model
@@ -10,20 +10,20 @@ from nltk_utils import bag_of_words, tokenize # Import our functions for data cu
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Open the intents data file
-with open('chatbot/intents.json', 'r') as f:
-    intents = json.load(f)
+with open('chatbot/data/ai.yml', 'r') as f:
+    data = yaml.safe_load(f)
 
 # Load the training data file
 FILE = "chatbot/data/BaconChatbotData.pth"
-data = torch.load(FILE)
+trained_data = torch.load(FILE)
 
 # Assign parameters - the info we need to create/run the model again
-input_size = data["input_size"] # Assign the value at the key "input_size" in the data file to the local variable "input_size"
-hidden_size = data["hidden_size"]
-output_size = data["output_size"]
-all_words = data["all_words"]
-tags = data["tags"]
-model_state = data["model_state"]
+input_size = trained_data["input_size"] # Assign the value at the key "input_size" in the data file to the local variable "input_size"
+hidden_size = trained_data["hidden_size"]
+output_size = trained_data["output_size"]
+all_words = trained_data["all_words"]
+tags = trained_data["tags"]
+model_state = trained_data["model_state"]
 
 model = NeuralNetwork(input_size, hidden_size, output_size).to(device)
 
@@ -53,9 +53,9 @@ def get_response(msg):
     # If the probability is large enough then choose the appropriate response, otherwise print error ("i don't understand...")
     if(tag_probability.item() > 0.75): # items() are used in dictionary.items() to display all the set of items (key and value) in the dictionary
         # Compare the predicted label to the actual labels in the intents.json data file
-        for intent in intents['intents']:
-            if tag == intent["tag"]: # Find the tag that matches the tag in one of the intents in the intents.json file
-                return random.choice(intent['responses']) # Randomly choose a repsonse from the response array in that tag
+        # for category in data['categories']:
+            if tag == data['categories'][0]: # Find the tag that matches the tag in one of the intents in the intents.json file
+                return random.choice(data['responses']) # Randomly choose a repsonse from the response array in that tag
     
     return "Sorry but I don't understand..."
 

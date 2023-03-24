@@ -1,5 +1,6 @@
 ## Load training data (the intent json file) - NOTE: RERUN TRAINING FILE WHENEVER intents.json IS MODIFIED!
 import json
+import yaml
 import numpy as np
 import random
 
@@ -10,8 +11,9 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import tokenize, stem, bag_of_words # import the functions that we created in nltk_utils.py
 from model import NeuralNetwork # Import our NeuralNetwork model from model.py
 
-with open('chatbot/intents.json', 'r') as f:
-    intents = json.load(f)
+with open("chatbot/data/ai.yml", "r") as f:
+    data = yaml.safe_load(f)
+# print(data)
 
 # lists to store the tokens and stems etc
 all_words = []
@@ -19,18 +21,26 @@ tags = []
 xy = []
 
 # Tokenization
-for intent in intents['intents']: # for intent in the list of intents in the json file with the key 'intents' - since json file is now displays as a python dictionary (aka python obj)
-    tag = intent['tag']
-    tags.append(tag) # add to tag list
-    for pattern in intent['patterns']:
-        # tokenize each word in the sentence
-        w = tokenize(pattern)
-        # add to our words list
-        all_words.extend(w) # Using extend isntead of append b/c 'w' is already an array, so we don't want all_words to be an array of arrays
-        # add to xy pair
-        xy.append((w, tag))
-        
-# Create the list of words that we want to ignore
+for heading in data: # for intent in the list of intents in the json file with the key 'intents' - since json file is now displays as a python dictionary (aka python obj)
+    # print(heading)
+    if(heading == "categories"):
+        tag = data[heading][0]
+        print(tag)
+        tags.append(tag) # add to tag list
+    if(heading == "conversations"):
+        conversations = data[heading]
+        # print(data[heading])
+        for convo in conversations:
+            pattern = convo[0]
+            # tokenize each word in the sentence
+            w = tokenize(pattern)
+            # add to our words list
+            all_words.extend(w) # Using extend instead of append b/c 'w' is already an array, so we don't want all_words to be an array of arrays
+            # add to xy pair
+            xy.append((w, tag))
+    # print(xy)
+
+# # Create the list of words that we want to ignore
 ignore_words = ['?', '!', '.', ',']
 
 # Stemming
