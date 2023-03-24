@@ -58,7 +58,7 @@ class Chatbox{
     onSendButton(chatbox)
     {
         var text_field = chatbox.querySelector("textarea");
-        let text1 = text_field.value
+        let text1 = text_field.value;
         text_field.style.height = "30px";
         // check if input is an empty message, if it is then just return nothing
         if(text1 === "")
@@ -107,12 +107,12 @@ class Chatbox{
             if(item.name === "Sydney Bot")
             {
                 // modify the innerhtml codes
-                html += "<div class = 'messages-item messages-item--visitor'>" + item.message + "</div>";
+                html += "<div class = 'messages-item messages-item--operator'>" + item.message + "</div>";
             }
             else
             {
                 // modify the innerhtml codes
-                html += "<div class = 'messages-item messages-item--operator'>" + item.message + "</div>";
+                html += "<div class = 'messages-item messages-item--visitor'>" + item.message + "</div>";
             }
         });
         // create new html text

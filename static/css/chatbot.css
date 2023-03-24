@@ -77,11 +77,11 @@
     width: fit-content;
 }
 
-.messages-item--operator {
+.messages-item--visitor {
     margin-left: auto;
 }
 
-.messages-item--visitor {
+.messages-item--operator {
     margin-right: auto;
 }
 
@@ -140,16 +140,18 @@
     background: #E0E0E0;
     padding: 8px 12px;
     max-width: 70%;
+    width: fit-content;
+    word-wrap: break-word
 }
 
-.messages-item--visitor,
+.messages-item--operator,
 .messages-item--typing {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-.messages-item--operator {
+.messages-item--visitor {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
