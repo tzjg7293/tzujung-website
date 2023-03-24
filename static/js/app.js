@@ -24,15 +24,30 @@ class Chatbox{
         // send msg when click on send button
         send_button.addEventListener("click", () => this.onSendButton(chatbox));
 
-        const node = chatbox.querySelector("input");
+        const node = chatbox.querySelector("textarea");
         // Also sends a msg if users use "ENTER" key
-        node.addEventListener("keyup", ({key}) => 
+        // node.addEventListener("keyup", ({key}) => 
+        // {
+            
+        //     if(key == "Enter" && !key.shiftKey)
+        //     {
+        //         this.onSendButton(chatbox);
+        //         console.log(key.shiftKey)
+        //     }
+    //     else if(key == "Enter" && key.shiftKey)
+        //     {
+        //         return
+        //     }
+        // }) 
+        node.addEventListener("keydown", function(e)
         {
-            if(key == "Enter")
+            // Enter was pressed without shift key
+            if (e.keyCode === 13 && !key.shiftKey)
             {
+                // prevent default behavior
                 this.onSendButton(chatbox);
             }
-        }) 
+        });
     }
 
     // implement the toggleState function to check if checkbox is open or closed
@@ -56,7 +71,7 @@ class Chatbox{
     // implement the send message on send function
     onSendButton(chatbox)
     {
-        var text_field = chatbox.querySelector("input");
+        var text_field = chatbox.querySelector("textarea");
         let text1 = text_field.value
         // check if input is an empty message, if it is then just return nothing
         if(text1 === "")

@@ -102,7 +102,7 @@
 
 /* HEADER */
 .chatbox-header {
-    background: var(--primaryGradient);
+    background: white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -119,13 +119,13 @@
 
 .chatbox-heading--header {
     font-size: 1rem;
-    color: white;
+    color: black;
     margin: 0;
 }
 
 .chatbox-description--header {
     font-size: .9rem;
-    color: white;
+    color: black;
     margin: 0;
     padding: 0;
 }
@@ -163,31 +163,36 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 15px;
-    background: var(--secondaryGradient);
+    padding: 8px 15px;
+    background: white;
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-top: 20px;
 }
 
-.chatbox-footer input {
-    font-size: 1rem;
+.chatbox-footer textarea {
+    /* font-size: 1rem; */
     width: 80%;
-    border: none;
-    padding: 5px 10px;
+    padding: 0px 10px;
     border-radius: 10px;
     text-align: left;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    /* resize: none; */
+    height: 30px;
+    line-height:30px;
 }
 
 .chatbox-send--footer {
-    color: white;
+    color: black;
 }
 
 .chatbox-button button,
 .chatbox-button button:focus,
 .chatbox-button button:visited {
-    width: 70px;
+    width: 75px;
     height: 70px;
     background: white;
     /* opacity: 0.5; */
