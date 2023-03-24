@@ -219,8 +219,13 @@
     </section>
 
     <script>
-        $('textarea').on('input', function() {
+        $('textarea').on('input', function(e) {
             $(this).outerHeight(30).outerHeight(this.scrollHeight);
+        });
+        $('textarea').keydown(function(e){
+            if(e.keyCode === 13 && !e.shiftKey){
+                e.preventDefault();
+            }
         });
         let stars = document.getElementById("stars");
         let moon = document.getElementById("moon");

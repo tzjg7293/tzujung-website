@@ -26,10 +26,11 @@ class Chatbox{
         
         const node = chatbox.querySelector("textarea");
         // Also sends a msg if users use "ENTER" key
-        node.addEventListener("keyup", ({key}) => 
+        node.addEventListener("keyup", ({key, shiftKey}) =>
         {
-            if(key === "Enter")
+            if(key === "Enter" && !shiftKey)
             {
+                // event.preventDefault(chatbox);
                 this.onSendButton(chatbox);
             }
         }) 
@@ -58,6 +59,7 @@ class Chatbox{
     {
         var text_field = chatbox.querySelector("textarea");
         let text1 = text_field.value
+        text_field.style.height = "30px";
         // check if input is an empty message, if it is then just return nothing
         if(text1 === "")
         {
