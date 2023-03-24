@@ -1,7 +1,7 @@
 ## Preprocessing techniques: ##
 import numpy as np
 import nltk
-# nltk.download('punkt')  # Only need to download for first time
+nltk.download('punkt') # Only need to download for first time
 from nltk.stem.porter import PorterStemmer  # Can try different imports of stemmers instead of PorterStemmer
 
 # Create a stemmer
