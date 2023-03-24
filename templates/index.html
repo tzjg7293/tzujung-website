@@ -68,7 +68,7 @@
                 <div></div>
             </div>
             <div class="chatbox-footer">
-                <textarea class = "input" type="text" placeholder="Write a message..."></textarea>
+                <textarea id = "input" type="text" placeholder="Write a message..."></textarea>
                 <button class="chatbox-send--footer send-button">Send</button>
             </div>
         </div>
@@ -219,6 +219,9 @@
     </section>
 
     <script>
+        $('textarea').on('input', function() {
+            $(this).outerHeight(30).outerHeight(this.scrollHeight);
+        });
         let stars = document.getElementById("stars");
         let moon = document.getElementById("moon");
         let mountains_behind = document.getElementById("mountains_behind");

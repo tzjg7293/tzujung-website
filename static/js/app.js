@@ -23,31 +23,16 @@ class Chatbox{
         open_button.addEventListener("click", () => this.toggleState(chatbox));
         // send msg when click on send button
         send_button.addEventListener("click", () => this.onSendButton(chatbox));
-
+        
         const node = chatbox.querySelector("textarea");
         // Also sends a msg if users use "ENTER" key
-        // node.addEventListener("keyup", ({key}) => 
-        // {
-            
-        //     if(key == "Enter" && !key.shiftKey)
-        //     {
-        //         this.onSendButton(chatbox);
-        //         console.log(key.shiftKey)
-        //     }
-    //     else if(key == "Enter" && key.shiftKey)
-        //     {
-        //         return
-        //     }
-        // }) 
-        node.addEventListener("keydown", function(e)
+        node.addEventListener("keyup", ({key}) => 
         {
-            // Enter was pressed without shift key
-            if (e.keyCode === 13 && !key.shiftKey)
+            if(key === "Enter")
             {
-                // prevent default behavior
                 this.onSendButton(chatbox);
             }
-        });
+        }) 
     }
 
     // implement the toggleState function to check if checkbox is open or closed

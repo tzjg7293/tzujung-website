@@ -180,9 +180,11 @@
     border: none;
     outline: none;
     overflow: hidden;
-    /* resize: none; */
+    resize: none;
     height: 30px;
+    min-height: 30px;
     line-height:30px;
+    box-sizing: border-box;
 }
 
 .chatbox-send--footer {
