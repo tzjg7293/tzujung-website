@@ -9,7 +9,7 @@ class Chatbox{
             send_button: document.querySelector(".send-button")
         }
         this.state = false; // initial state of chatbox - chatbox is initially closed by default
-        this.messages = []; // array to store messages
+        this.messages = [{name: "Sydney Bot", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio! How can I help you today?"}]; // array to store messages
     }
 
     // function to display the messages
@@ -17,6 +17,7 @@ class Chatbox{
     {
         // Extract the arguments
         const{open_button, chatbox, send_button} = this.args;
+        this.updateChatbox(chatbox)
         console.log("testing");
         // add two click event listeners
         // open chatbox when clicked

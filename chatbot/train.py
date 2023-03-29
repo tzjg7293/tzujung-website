@@ -6,8 +6,13 @@ import pickle
 import numpy as np
 import random
 
+from keras.models import Sequential
+from keras.layers import Dense, Activation, Dropout
+from keras.optimizers import SGD
+
 from nltk_utils import tokenize, lemma, bag_of_words # import the functions that we created in nltk_utils.py
 # from model import NeuralNetwork # Import our NeuralNetwork model from model.py
+
 
 with open('chatbot/intents.json', 'r') as f:
     intents = json.load(f)
@@ -47,115 +52,50 @@ pickle.dump(all_words,open('words.pkl','wb'))
 pickle.dump(tags,open('classes.pkl','wb'))
 
 ## Creating and training the data
-# creating the bag of words
-X_train = []
-y_train = []
+# create our training data
+training = []
+# create an empty array for our output
+output_empty = [0] * len(tags)
 
-# for(pattern_sentence, tag) in xy:
 for doc in xy:
-    # print("Pattern sentence: " + str(pattern_sentence))
-    # print("Tag: " + tag)
-    # convert pattern_sentence in lower case
-    pattern_sentence = doc[0]
-    pattern_sentence = [lemma(word) for word in pattern_sentence]
-    # print("All words: " + str(all_words))
-    # bag = bag_of_words(pattern_sentence, all_words)
-    # print("Bag: " + str(bag))
-    # X_train.append(bag) # append this to the x training data
-    # label = tags.index(tag) # y is the labels - so the list of tags will be indexed according to their order
-    # y_train.append(label) # Using CrossEntropyLoss later here so we odn't need to worry about 1 hot vector encoding
-    # create our training data
-    training = []
-    # create an empty array for our output
-    output_empty = [0] * len(tags)
+    # initialize our bag of words
     bag = []
+    # list of tokenized words for the pattern
+    pattern_words = doc[0]
+    # lemmatize each word - create base word, in attempt to represent related words
+    pattern_words = [lemma(word) for word in pattern_words]
+    # create our bag of words array with 1, if word match found in current pattern
     for w in all_words:
-        bag.append(1) if w in pattern_sentence else bag.append(0)
-    
-    # in output array 0 value for each tag ang 1 value for matched tag.[row * colm(8)]
+        bag.append(1) if w in pattern_words else bag.append(0)
+    # output is a '0' for each tag and '1' for current tag (for each pattern)
     output_row = list(output_empty)
     output_row[tags.index(doc[1])] = 1
-    
     training.append([bag, output_row])
-    print(training)
 
-# # convert to numpy array
-# X_train = np.array(X_train) # Capitalized X_train represents 2-D vector, while lower case represents 1-D vectors
-# y_train = np.array(y_train)
-
-# ## Create a pytorch dataset from the X_train and y_train dataset
-# class ChatDataset(Dataset): # Create a new class called chatDataset that inherits Dataset
-
-#     # Constructor
-#     def __init__(self):
-#         self.n_samples = len(X_train) # Number of samples = length of x training data
-#         self.x_data = X_train  
-#         self.y_data = y_train
-
-#     # Define the get item function so we can later on access dataset[idx]
-#     def __getitem__(self, index):
-#         return self.x_data[index], self.y_data[index] # Return as a tuple of x and y data
+# shuffle our features and turn into np.array
+random.shuffle(training)
+training = np.array(training)
+# create train and test lists. X - patterns, Y - intents
+train_x = list(training[:,0])
+train_y = list(training[:,1])
+print("Training data created")
     
-#     # Length method
-#     def __len__(self):
-#         return self.n_samples
-    
-# # Hyper-parameters (can be changed)
-# batch_size = 8
-# input_size = len(X_train[0]) # Length of each bag_of_words we created. In this case it has the same length as the all_words array, or we can use the first set of X_train data since they all have the same length
-# hidden_size = 8
-# output_size = len(tags) # Number of different classes aka tags that we have
-# learning_rate = 0.001
-# num_epochs = 1000 # Num of training iterations
-# print(input_size, output_size)
+# Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
+# equal to number of intents to predict output intent with softmax
+model = Sequential()
+model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(len(train_y[0]), activation='softmax'))
 
-# #  Check before running
-# dataset = ChatDataset()
-# # training loader
-# train_loader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True, num_workers = 0) # Depending on num_workers, the more the faster it loads but takes more cpu
+# Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
+sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# # If we have GPU available we can specify it here
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # If if we have cuda, push our model to it to use it, otherwise use cpu
-# # Integrate model
-# model = NeuralNetwork(input_size, hidden_size, output_size).to(device) # Push our model to either cuda or cpu depending on availability
+#fitting and saving the model 
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+FILE = "chatbot/data/BaconChatbotData.h5" # Define a file name
+model.save(FILE, hist)
 
-# # Specify the loss and optimizer
-# criterion = nn.CrossEntropyLoss() # CrossEntropyLoss ayutomatically applied softmax
-# optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate) # We are optimizing the model.parameters(); lr = learning rate
-
-# # Define the training epoch (loops)
-# for epoch in range(num_epochs):
-#     for (words, labels) in train_loader:
-#         word = words.to(device) # we want to push it to the device
-#         labels = labels.to(dtype=torch.long).to(device)
-
-#         # call the forward pass
-#         outputs = model(words) # words as the input
-#         loss = criterion(outputs, labels) # calculate the loss; outputs = predicted output; labels = actual labels
-
-#         # backward pass and optimizer step
-#         optimizer.zero_grad() # empty the gradient first
-#         loss.backward() # to calculate back propagation
-#         optimizer.step()
-
-#     # Print this every 100 epoch (iterations)
-#     if (epoch + 1) % 100 == 0:
-#         print(f"epoch [{epoch + 1} / {num_epochs}], loss = {loss.item():.4f}") # print as a f string the current epoch: (epoch + 1), and the total number of epochs (num_epochs); print loss item up to 4 decimal points
-
-# print(f"final loss, loss = {loss.item():.4f}") # print the final loss - the lost at the end
-
-# ## SAVING THE TRAINED DATA
-# # Create a dictionary to store different things about the model
-# data = {
-#     "model_state": model.state_dict(),
-#     "input_size": input_size,
-#     "output_size": output_size,
-#     "hidden_size": hidden_size,
-#     "all_words": all_words, # Store all the words we collected at the beginning
-#     "tags": tags
-# }
-
-# FILE = "chatbot/data/BaconChatbotData.pth" # Define a file name
-# torch.save(data, FILE) # will save it as a pickle file at the FILE location. THIS IS THE TRAINED MODEL
-
-# print(f"Training complete. File saved to {FILE}")
+print("Model saved to " + FILE)
