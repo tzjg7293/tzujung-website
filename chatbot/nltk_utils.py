@@ -2,10 +2,13 @@
 import numpy as np
 import nltk
 nltk.download('punkt') # Only need to download for first time
-from nltk.stem.porter import PorterStemmer  # Can try different imports of stemmers instead of PorterStemmer
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+from nltk.stem import WordNetLemmatizer  # Can try different imports of stemmers instead of PorterStemmer
+# Using lemmatizer instead of stemmer b/c more accurate even though it has more recall time
 
-# Create a stemmer
-stemmer = PorterStemmer()
+# Create a lemmatizer
+lemmatizer = WordNetLemmatizer()
 
 # function to tokenize the sentences - split sentence into individual words
 def tokenize(sentence):
@@ -16,7 +19,7 @@ def tokenize(sentence):
     return nltk.word_tokenize(sentence)
 
 # Extract the roots of each word - eg. {organize, organizing, organizer} => {organ, organ, organ}
-def stem(word):
+def lemma(word):
     """
     stemming = find the root form of the word
     examples:
@@ -24,7 +27,7 @@ def stem(word):
     words = [stem(w) for w in words]
     -> ["organ", "organ", "organ"]
     """
-    return stemmer.stem(word.lower())  # We want to lower case all the words too so use word.lower()
+    return lemmatizer.lemmatize(word.lower())  # We want to lower case all the words too so use word.lower()
 
 # Convert the individial tokens (words) into number - binary
 def bag_of_words(tokenized_sentence, all_words):
@@ -36,7 +39,7 @@ def bag_of_words(tokenized_sentence, all_words):
     words = ["hi", "hello", "I", "you", "bye", "thank", "cool"]
     bog   = [  0 ,    1 ,    0 ,   1 ,    0 ,    0 ,      0]
     """
-    tokenized_sentence = [stem(word) for word in tokenized_sentence]
+    tokenized_sentence = [lemma(word) for word in tokenized_sentence]
 
     bag = np.zeros(len(all_words), dtype = np.float32) # Create an array filled with zeroes that is the length of all the words in the list
     for idx, w in enumerate(all_words): # Will give index (idx) and current word (w) in all the words

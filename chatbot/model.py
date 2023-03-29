@@ -1,5 +1,9 @@
-import torch
-import torch.nn as nn
+import numpy as np
+import tensorflow as tf
+from keras.models import Sequential
+from keras.layers import Dense, Activation, Dropout
+from tensorflow.keras.optimizers import SGD
+import random
 
 # Create a class called NeuralNetwork (can be any name) derived from nn.Module
 class NeuralNetwork(nn.Module):
