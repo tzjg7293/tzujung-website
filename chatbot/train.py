@@ -15,7 +15,7 @@ with open('chatbot/intents.json', 'r') as f:
 # lists to store the tokens and stems etc
 all_words = []
 tags = []
-xy = []
+xy = [] # xy = combination pair between patterns and intents
 # Create the list of words that we want to ignore
 ignore_words = ['?', '!', '.', ',']
 
@@ -37,7 +37,7 @@ all_words = [lemma(w) for w in all_words if w not in ignore_words] # Stem all th
 all_words = sorted(list(set(all_words))) # remove duplicates and sort - set() removes duplicate elements, we only want to keep the unique words; sorted() returns sorted list
 tags = sorted(list(set(tags))) # Sort the tags
 
-# xy = combination between patterns and intents
+# see current data
 print (len(xy), "patterns\n", xy, "\n")
 # classes = intents[tag]
 print (len(tags), "classes\n", tags, "\n")
@@ -48,14 +48,36 @@ pickle.dump(tags,open('classes.pkl','wb'))
 
 ## Creating and training the data
 # creating the bag of words
-# X_train = []
-# y_train = []
+X_train = []
+y_train = []
 
 # for(pattern_sentence, tag) in xy:
-#     bag = bag_of_words(pattern_sentence, all_words)
-#     X_train.append(bag) # append this to the x training data
-#     label = tags.index(tag) # y is the labels - so the list of tags will be indexed according to their order
-#     y_train.append(label) # Using CrossEntropyLoss later here so we odn't need to worry about 1 hot vector encoding
+for doc in xy:
+    # print("Pattern sentence: " + str(pattern_sentence))
+    # print("Tag: " + tag)
+    # convert pattern_sentence in lower case
+    pattern_sentence = doc[0]
+    pattern_sentence = [lemma(word) for word in pattern_sentence]
+    # print("All words: " + str(all_words))
+    # bag = bag_of_words(pattern_sentence, all_words)
+    # print("Bag: " + str(bag))
+    # X_train.append(bag) # append this to the x training data
+    # label = tags.index(tag) # y is the labels - so the list of tags will be indexed according to their order
+    # y_train.append(label) # Using CrossEntropyLoss later here so we odn't need to worry about 1 hot vector encoding
+    # create our training data
+    training = []
+    # create an empty array for our output
+    output_empty = [0] * len(tags)
+    bag = []
+    for w in all_words:
+        bag.append(1) if w in pattern_sentence else bag.append(0)
+    
+    # in output array 0 value for each tag ang 1 value for matched tag.[row * colm(8)]
+    output_row = list(output_empty)
+    output_row[tags.index(doc[1])] = 1
+    
+    training.append([bag, output_row])
+    print(training)
 
 # # convert to numpy array
 # X_train = np.array(X_train) # Capitalized X_train represents 2-D vector, while lower case represents 1-D vectors
