@@ -56,15 +56,15 @@
         <div class="chatbox-support">
             <div class="chatbox-header text-start">
                 <div class="chatbox-image--header">
-                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
-                        alt="image">
+                    <!-- https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png -->
+                    <img src="../static/img/chatbot-header.png" alt="bot profile image">
                 </div>
                 <div class="chatbox-content--header">
                     <h4 class="chatbox-heading--header">Sydney Bot</h4>
                     <p class="chatbox-description--header">Ask me a question</p>
                 </div>
             </div>
-            <div class="chatbox-messages">
+            <div id = "msg-container" class="chatbox-messages">
                 <div></div>
             </div>
             <div class="chatbox-footer">
@@ -225,6 +225,15 @@
         $('textarea').keydown(function(e){
             if(e.keyCode === 13 && !e.shiftKey){
                 e.preventDefault();
+            }
+        });
+        $('#msg-container').scroll(function() {
+            var pos = $('#msg-container').scrollBottom();
+            console.log("scrolling");
+            console.log(pos);
+            if (pos == 0) 
+            {
+                alert('top of the div');
             }
         });
         let stars = document.getElementById("stars");
