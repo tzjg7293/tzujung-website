@@ -1,3 +1,5 @@
+# test from https://www.kaggle.com/code/niraliivaghani/chatbot-training-model/notebook
+
 ## Load training data (the intent json file) - NOTE: RERUN TRAINING FILE WHENEVER intents.json IS MODIFIED!
 import json
 import pickle
