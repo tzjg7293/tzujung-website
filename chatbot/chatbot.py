@@ -18,6 +18,7 @@ def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     # stem each word - create short form for word
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+    print("lemmatized word: " + str(sentence_words))
     return sentence_words
 # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
 
@@ -33,12 +34,17 @@ def bow(sentence, words, show_details=True):
                 bag[i] = 1
                 if show_details:
                     print ("found in bag: %s" % w)
+    print("bag: " + str(bag))
     return(np.array(bag))
 
 def predict_class(sentence, model):
     # filter out predictions below a threshold
-    p = bow(sentence, words,show_details=False)
+    p = bow(sentence, words, show_details=True)
+    print("p: " + str(p))
     res = model.predict(np.array([p]))[0]
+    print("res: " + str(res))
+    for i,r in enumerate(res):
+        print("r: " + str(r))
     ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     # sort by strength of probability
@@ -46,6 +52,7 @@ def predict_class(sentence, model):
     return_list = []
     for r in results:
         return_list.append({"intent": tags[r[0]], "probability": str(r[1])})
+    print(return_list)
     return return_list
 
 def getResponse(ints, intents_json):

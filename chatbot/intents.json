@@ -2,6 +2,26 @@
     "intents":
     [
         {
+            "tag": "nonsense",
+            "patterns":
+            [
+                "cadfsgefg",
+                "rtgqt",
+                "vierbgi;",
+                "dsfkml;a",
+                "r7q8429yuehwfdniojn",
+                "sadfwdadfg",
+                "dgteqwhg",
+                "TQ3REg",
+                "231`42`65",
+                "Y127Y497823Y49"
+            ],
+            "responses":
+            [
+                "Sorry, but I don't understand what that means yet..."
+            ]
+        },
+        {
             "tag": "greeting",
             "patterns":
             [

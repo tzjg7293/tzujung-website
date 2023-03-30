@@ -48,8 +48,8 @@ print (len(xy), "patterns\n", xy, "\n")
 print (len(tags), "classes\n", tags, "\n")
 # words = all words, vocabulary
 print (len(all_words), "unique lemmatized words\n", all_words, "\n")
-pickle.dump(all_words,open('words.pkl','wb'))
-pickle.dump(tags,open('classes.pkl','wb'))
+pickle.dump(all_words,open('chatbot/data/words.pkl','wb'))
+pickle.dump(tags,open('chatbot/data/classes.pkl','wb'))
 
 ## Creating and training the data
 # create our training data
