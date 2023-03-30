@@ -98,6 +98,60 @@
     margin-right: auto;
 }
 
+/* TYPING ANIMATION */
+.typing-bubble {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border-bottom-left-radius: 2px;
+    max-width: 70%;
+    width: fit-content;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+.typing {
+    align-items: center;
+    display: flex;
+    height: 17px;
+}
+.typing span {
+    animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+    background-color: black ;
+    border-radius: 50%;
+    height: 7px;
+    margin-right: 4px;
+    vertical-align: middle;
+    width: 7px;
+    display: inline-block;
+}
+.typing span:nth-child(1) {
+    animation-delay: 200ms;
+}
+.typing span:nth-child(2) {
+    animation-delay: 300ms;
+}
+.typing span:nth-child(3) {
+    animation-delay: 400ms;
+}
+.typing span:last-child {
+    margin-right: 0;
+}
+@keyframes mercuryTypingAnimation {
+  0% {
+    transform: translateY(0px);
+    background-color:black; 
+  }
+  28% {
+    transform: translateY(-7px);
+    background-color:rgb(80, 80, 80);
+  }
+  44% {
+    transform: translateY(0px);
+    background-color: rgb(161, 161, 161);
+  }
+}
+  
+
 /* FOOTER */
 .chatbox-footer {
     position: sticky;

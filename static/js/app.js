@@ -10,6 +10,7 @@ class Chatbox{
         }
         this.state = false; // initial state of chatbox - chatbox is initially closed by default
         this.messages = [{name: "welcome-msg", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio! How can I help you today?"}]; // array to store messages
+        this.loading = false;
     }
 
     // function to display the messages
@@ -66,7 +67,6 @@ class Chatbox{
         {
             return;
         }
-
         // otherwise if text is not empty, then continue
         let msg1 = {name: "User", message: text1}; // define a javascript object (like a dictionary) for the msg that we want to send to our model. The "message" key has to be the same as the key define in out app.py file (line 16)
         this.messages.push(msg1); // push the msg into the message array
