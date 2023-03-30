@@ -9,7 +9,7 @@ class Chatbox{
             send_button: document.querySelector(".send-button")
         }
         this.state = false; // initial state of chatbox - chatbox is initially closed by default
-        this.messages = [{name: "Sydney Bot", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio! How can I help you today?"}]; // array to store messages
+        this.messages = [{name: "welcome-msg", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio! How can I help you today?"}]; // array to store messages
     }
 
     // function to display the messages
@@ -105,7 +105,12 @@ class Chatbox{
         // loop thru the msgs
         this.messages.slice().reverse().forEach(function(item, index){
             // check if the msg is from user or from our bot (Sydney bot)
-            if(item.name === "Sydney Bot")
+            if(item.name === "welcome-msg")
+            {
+                // modify the innerhtml codes
+                html += "<div class = 'messages-item messages-item--operator welcome-msg'>" + item.message + "</div>";
+            }
+            else if(item.name === "Sydney Bot")
             {
                 // modify the innerhtml codes
                 html += "<div class = 'messages-item messages-item--operator'>" + item.message + "</div>";
