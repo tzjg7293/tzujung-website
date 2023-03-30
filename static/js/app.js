@@ -6,7 +6,8 @@ class Chatbox{
         this.args = {
             open_button: document.querySelector(".chatbox-button"),
             chatbox: document.querySelector(".chatbox-support"),
-            send_button: document.querySelector(".send-button")
+            send_button: document.querySelector(".send-button"),
+            typing: document.querySelector(".typing-bubble")
         }
         this.state = false; // initial state of chatbox - chatbox is initially closed by default
         this.messages = [{name: "welcome-msg", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio! How can I help you today?"}]; // array to store messages
@@ -32,7 +33,6 @@ class Chatbox{
         {
             if(key === "Enter" && !shiftKey)
             {
-                // event.preventDefault(chatbox);
                 this.onSendButton(chatbox);
             }
         }) 
@@ -56,9 +56,22 @@ class Chatbox{
         }
     }
 
+    load(loading)
+    {
+        if(this.loading === true)
+        {
+            typing.style.display = 'block';
+        }
+        else
+        {
+            typing.style.display = 'none';
+        }
+    }
     // implement the send message on send function
     onSendButton(chatbox)
     {
+        this.loading = true;
+        this.load(this.loading);
         var text_field = chatbox.querySelector("textarea");
         let text1 = text_field.value;
         text_field.style.height = "30px";
@@ -89,11 +102,11 @@ class Chatbox{
             // create a json obj to store the received msg
             let msg2 = {name: "Sydney Bot", message: r.answer}; // the key has to be the same (answer)
             this.messages.push(msg2); // add the msg to the msg array
-            this.updateChatbox(chatbox); // update the chatbox
+            setTimeout(() => this.updateChatbox(chatbox), 800);
             text_field.value = ""; // return/show nothing
         }).catch((error) => {
             console.error("Error:", error);
-            this.updateChatbox(chatbox)
+            this.updateChatbox(chatbox);
             text_field.value = ""; // return/show nothing
         });
     }
@@ -101,6 +114,9 @@ class Chatbox{
     //implement the update chatbox function
     updateChatbox(chatbox)
     {
+        
+        this.loading = false;
+        this.load(this.loading);
         var html = "";
         // loop thru the msgs
         this.messages.slice().reverse().forEach(function(item, index){
