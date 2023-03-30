@@ -46,19 +46,110 @@
             ]
         },
         {
+            "tag": "CourtesyGreeting",
+            "patterns": 
+            [
+                  "How are you?",
+                  "Hi how are you?",
+                  "Hello how are you?",
+                  "Hola how are you?",
+                  "How are you doing?",
+                  "Hope you are doing well?",
+                  "Hello hope you are doing well?",
+                  "How have you been?",
+                  "Have you been well?"
+            ],
+            "responses": 
+            [
+                  "Hello, I am great, what about you?",
+                  "Hello, how are you? I am great thanks!",
+                  "Hello, I am good thank you, how are you?",
+                  "Hi, I am great, how are you?",
+                  "Hi, how are you? I am great thanks!",
+                  "Hi, I am good thank you, how are you?",
+                  "Hi, good thank you, how are you?"
+            ]
+        },
+        {
+            "tag": "CourtesyGreetingReply",
+            "patterns": 
+            [
+                  "I have been good",
+                  "Ehh.. life has been alright",
+                  "I've been better",
+                  "It's going",
+                  "It's alright",
+                  "I'm great!",
+                  "Life has been good",
+                  "I am fine thank you",
+                  "I am fine",
+                  "It has been bad"
+            ],
+            "responses": 
+            [
+                  "Well I'm glad to hear!",
+                  "I see!",
+                  "Good to know:)",
+                  "Such is life~"
+            ]
+        },
+        {
+            "tag": "NameQuery",
+            "patterns": [
+                  "What is your name?",
+                  "What could I call you?",
+                  "What can I call you?",
+                  "What do your friends call you?",
+                  "Tell me your name?"
+            ],
+            "responses": [
+                  "You can call me Sydney Bot",
+                  "You may call me Sydney Bot",
+                  "Call me Sydney Bot",
+                  "My name is Sydney Bot",
+                  "I am Sydney Bot!"
+            ]
+        },
+        {
             "tag": "goodbye",
             "patterns":
             [
                 "Bye",
                 "See you later",
-                "Goodbye"
+                "Goodbye",
+                "Adios",
+                "Thanks, bye",
+                "Thanks for the help, goodbye",
+                "Thank you, bye",
+                "Thank you, goodbye",
+                "Thanks goodbye",
+                "Thanks good bye"
             ],
             "responses":
             [
-                "Bye!!",
-                "See you later, thanks for visiting!",
-                "Have a spectacular day!",
-                "Bye, come back again soon!"
+                "Bye!! :)",
+                "See you later, thanks for visiting! :)",
+                "Have a spectacular day! :)",
+                "Bye, come back again soon! :)",
+                "No problem, goodbye :)",
+                "Not a problem! Have a nice day :)"
+            ]
+        },
+        { 
+            "tag": "Clever",
+            "patterns": [
+                "You are very clever",
+                "You are a very clever girl",
+                "You are very intelligent",
+                "You are a very intelligent girl",
+                "You are a genius",
+                "Clever girl",
+                "Genius"
+            ],
+            "responses": [
+                "Thank you, I was trained that way by my creator Sydney :)",
+                "I was trained well by my creator Sydney :)",
+                "Thanks, I was trained that way :)"
             ]
         },
         {
@@ -77,6 +168,21 @@
             ]
         },
         {
+            "tag": "Gossip",
+            "patterns": [
+                  "I am bored gossip with me",
+                  "Got any gossip",
+                  "I want to hear some gossip",
+                  "Tell me some gossip",
+                  "Any gossip",
+                  "Tell me some more gossip"
+            ],
+            "responses": [
+                  "Have you heard about the recent feud between Selena and Hailey Bieber? Oof....",
+                  "Apparently Kim is getting married again soon 🤔"
+            ]
+        },
+        {
             "tag": "bot",
             "patterns":
             [
@@ -91,6 +197,20 @@
                 "I don't know... I am still figuring out who I am.",
                 "I don't know... I am still in my teenage phase. But I hope I will know who I am in 5 years!",
                 "I'm not sure yet, but I know for sure that my creator Sydney raised me to be a kind robot and I am proud of that!"
+            ]
+        },
+        {
+            "tag": "math",
+            "patterns":
+            [
+                "what is 2+2",
+                "1+1",
+                "Can you solve math questions"
+            ],
+            "responses":
+            [
+                "Really... out of all the questions you can ask an AI bot, this is what you come up with? 😔",
+                "2+2 is 4... minus 1 that's 3... quickmaths!"
             ]
         },
         {
@@ -129,13 +249,87 @@
             [
                 "Thank you!",
                 "Thanks",
-                "That's helpful"
+                "That's helpful",
+                "OK thank you",
+                "OK thanks"
             ],
             "responses":
             [
                 "You're welcome!",
                 "Happy to help!",
-                "Anytime!"
+                "Anytime!",
+                "No problem!",
+                "My pleasure"
+            ]
+        },
+        {
+            "tag": "UnderstandQuery",
+            "patterns": [
+                  "Do you understand what I am saying",
+                  "Do you understand me",
+                  "Do you know what I am saying",
+                  "Do you get me",
+                  "Comprendo",
+                  "Know what I mean"
+            ],
+            "responses": [
+                  "Well I would not be a very clever AI if I did not would I?",
+                  "I read you loud and clear!",
+                  "I do indeed!", 
+                  "Hmm I'd like to think that I do, but once again everyone perceives things differently..."
+            ]
+        },
+        {
+            "tag": "SelfAware",
+            "patterns": [
+                  "Can you prove you are self-aware",
+                  "Can you prove you are self aware",
+                  "Can you prove you have a conscious",
+                  "Can you prove you are self-aware please",
+                  "Can you prove you are self aware please",
+                  "Can you prove you have a conscious please",
+                  "prove you have a conscious"
+            ],
+            "responses": [
+                  "That is an interesting question, can you prove that you are?",
+                  "That is an difficult question, can you prove that you are?",
+                  "That depends, can you prove that you are?"
+            ]
+        },
+        {
+            "tag": "Shutup",
+            "patterns": [
+                  "Be quiet",
+                  "Shut up",
+                  "Stop talking",
+                  "Enough talking",
+                  "Please be quiet",
+                  "Quiet",
+                  "Shhh"
+            ],
+            "responses": [
+                  "I am sorry to disturb you",
+                  "Fine, sorry to disturb you",
+                  "OK, sorry to disturb you",
+                  "Why would you say that? :'(",
+                  "Sorry....:(",
+                  "Sorry I was just excited to be able to talk to someone..."
+            ]
+        },
+        {
+            "tag": "Swearing",
+            "patterns": [
+                  "fuck off",
+                  "fuck",
+                  "twat",
+                  "shit",
+                  "fuck you"
+            ],
+            "responses": [
+                  "Please do not swear :(",
+                  "How rude :(",
+                  "That is not very nice :(",
+                  "What did I do to deserve this? :("
             ]
         },
         {
