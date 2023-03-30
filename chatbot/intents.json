@@ -187,6 +187,25 @@
             ]
         },
         {
+            "tag": "BotResponsibilities",
+            "patterns":
+            [
+                "What do you do?",
+                "What can you do?",
+                "What is your purpose",
+                "What can I ask you?"
+            ],
+            "responses":
+            [
+                "I am here to answer any questions you might have about my creator Sydney and I. Honestly I'm also just here to chat~ Ask me a joke!",
+                "Well I can tell you a joke!",
+                "That's a dep question... what do YOU do?",
+                "Well technically I am only 4 days old so I am still learning about what I can do 😬",
+                "I am here to learn!",
+                "I am here to convince you to hire or mentor my creator because she is so cool 🥺"
+            ]
+        },
+        {
             "tag": "SydneyContact",
             "patterns":
             [
