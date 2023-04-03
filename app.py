@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, jsonify # jsonify to return a json response
+from flask import Flask, render_template, request, jsonify, send_file # jsonify to return a json response
 
-from chatbot import chatbot_response
+from chatbot.chatbot import chatbot_response
 
 # Setup flask app
-app = Flask(__name__, template_folder='../templates', static_folder='../static') # underscore __ is just conventional way of naming
+app = Flask(__name__, template_folder='templates', static_folder='static') # underscore __ is just conventional way of naming
 
 # Define 2 routes
 
@@ -18,6 +18,11 @@ def predict(): # route 2 to get predictions
     response = chatbot_response(text)
     message = {"answer": response} # create a dictionary called message and define a key called "answer"
     return jsonify(message) # jsonify the response
+
+@app.route('/download')
+def download():
+    path = 'static/pdf/sydney-resume.pdf'
+    return send_file(path, as_attachment=True)
 
 # Run the app
 if(__name__ == "__main__"):

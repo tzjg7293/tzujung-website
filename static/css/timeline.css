@@ -115,7 +115,6 @@
   top: 75%;
   transition: .3s all .2s;
   opacity: 1;
-  white-space: pre;
 }
 .timeline-item--active .timeline-content-title {
   margin: 0 0 20px 0;
