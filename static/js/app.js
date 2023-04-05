@@ -98,13 +98,18 @@ class Chatbox{
         // wait to receive the json response after sending POST request
         .then(r => r.json()) // extract the json obj
         // send the msg back to the user (display it in chatbox)
-        .then(r => {
+	.then(r => {
             // create a json obj to store the received msg
             let msg2 = {name: "Sydney Bot", message: r.answer}; // the key has to be the same (answer)
             this.messages.push(msg2); // add the msg to the msg array
-            setTimeout(() => this.updateChatbox(chatbox), 800);
+            setTimeout(() => this.updateChatbox(chatbox), 600);
             text_field.value = ""; // return/show nothing
-        }).catch((error) => {
+        })
+	//.then(function (bodyText) {
+        //	console.log('Received the following instead of valid JSON:', bodyText);
+    	//})
+	.catch((error) => {
+	    console.log('Error parsing JSON from response')
             console.error("Error:", error);
             this.updateChatbox(chatbox);
             text_field.value = ""; // return/show nothing

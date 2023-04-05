@@ -14,7 +14,7 @@
       var max, min;
       var screen_height = screen.height;
       var pos = $(this).scrollTop();
-      console.log("Pos: " + pos);
+      //console.log("Pos: " + pos);
       $(".timeline-item").each(function (i, item) {
         content = $('.timeline-content');
         date = $('.timeline-info');
