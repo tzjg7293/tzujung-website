@@ -22,7 +22,7 @@ all_words = []
 tags = []
 xy = [] # xy = combination pair between patterns and intents
 # Create the list of words that we want to ignore
-ignore_words = ['?', '!', '.', ',']
+ignore_words = ['?', '!', '.', ',', ';', '-', '_']
 
 # Tokenization
 for intent in intents['intents']: # for intent in the list of intents in the json file with the key 'intents' - since json file is now displays as a python dictionary (aka python obj)
@@ -36,18 +36,18 @@ for intent in intents['intents']: # for intent in the list of intents in the jso
         all_words.extend(w) # Using extend isntead of append b/c 'w' is already an array, so we don't want all_words to be an array of arrays
         # add to xy pair
         xy.append((w, tag))
-
+print( "XY: " + str(xy))
 # lemmatize, lower each word and remove duplicates
 all_words = [lemma(w) for w in all_words if w not in ignore_words] # Stem all the words that's not in the ignore words list
 all_words = sorted(list(set(all_words))) # remove duplicates and sort - set() removes duplicate elements, we only want to keep the unique words; sorted() returns sorted list
 tags = sorted(list(set(tags))) # Sort the tags
 
 # see current data
-print (len(xy), "patterns\n", xy, "\n")
+# print (len(xy), "patterns\n", xy, "\n")
 # classes = intents[tag]
-print (len(tags), "classes\n", tags, "\n")
+# print (len(tags), "classes\n", tags, "\n")
 # words = all words, vocabulary
-print (len(all_words), "unique lemmatized words\n", all_words, "\n")
+# print (len(all_words), "unique lemmatized words\n", all_words, "\n")
 pickle.dump(all_words,open('chatbot/data/words.pkl','wb'))
 pickle.dump(tags,open('chatbot/data/classes.pkl','wb'))
 
@@ -56,12 +56,13 @@ pickle.dump(tags,open('chatbot/data/classes.pkl','wb'))
 training = []
 # create an empty array for our output
 output_empty = [0] * len(tags)
+print("OUTPUT EMPTY: ", output_empty)
 
-for doc in xy:
+for item in xy:
     # initialize our bag of words
     bag = []
     # list of tokenized words for the pattern
-    pattern_words = doc[0]
+    pattern_words = item[0]
     # lemmatize each word - create base word, in attempt to represent related words
     pattern_words = [lemma(word) for word in pattern_words]
     # create our bag of words array with 1, if word match found in current pattern
@@ -69,8 +70,12 @@ for doc in xy:
         bag.append(1) if w in pattern_words else bag.append(0)
     # output is a '0' for each tag and '1' for current tag (for each pattern)
     output_row = list(output_empty)
-    output_row[tags.index(doc[1])] = 1
+    print(tags)
+    output_row[tags.index(item[1])] = 1
+    print("BAG: ", bag)
+    print("OUTPUT ROW: ", output_row)
     training.append([bag, output_row])
+print("TRAINING:" + str(training))
 
 # shuffle our features and turn into np.array
 random.shuffle(training)
