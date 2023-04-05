@@ -42,7 +42,7 @@
         </div>
 
         <div class="logo">
-            <a href="../templates/index.html" class=""><img src="{{url_for('static', filename = 'img/logo.png')}}"
+            <a href="#" class=""><img src="{{url_for('static', filename = 'img/logo.png')}}"
                     width="50px"></a>
         </div>
 
@@ -107,7 +107,7 @@
             <p>sydney.tj.fang@gmail.com</p>
             <p class="fw-bold">Education</p>
             <p>The University of British Columbia<br><span class="fst-italic">
-                Double major in Computer Science and Bio-Chemistry</span></p>
+                    Double major in Computer Science and Bio-Chemistry</span></p>
             <p class="fw-bold">Hobbies</p>
             <p>Reading, snowboarding, cooking, coding, listening to music, painting</p>
         </div>
@@ -123,7 +123,7 @@
             <h2 class="timeline-header-title">Experience</h2>
             <h3 class="timeline-header-subtitle mb-3">Related work and technical experience</h3>
             <div class="button">
-                <a id="resume" class="" href="{{url_for('download')}}" target="_blank"
+                <a id="resume" class="" href="{{url_for('static', filename = 'pdf/sydney-resume.pdf')}}" target="_blank"
                     download>Download my resume<img class="click align-self-center"
                         src="{{url_for('static', filename = 'img/click.png')}}"></a>
             </div>
@@ -240,8 +240,8 @@
         });
         $('#msg-container').scroll(function() {
             var pos = $('#msg-container').scrollBottom();
-            console.log("scrolling");
-            console.log(pos);
+            //console.log("scrolling");
+            //console.log(pos);
             if (pos == 0) 
             {
                 alert('top of the div');
@@ -260,7 +260,7 @@
         window.addEventListener('scroll', function () {
             let value = window.scrollY;
             var rbg = value / 5 * 0.01;
-            console.log("rbg: " + rbg);
+            //console.log("rbg: " + rbg);
             stars.style.left = value * 0.25 + 'px';
             moon.style.top = value * 1.05 + 'px';
             mountains_behind.style.top = value * 0.5 + 'px';
@@ -268,12 +268,12 @@
             // text.style.marginRight = value * 4 + 'px';
             text.style.marginTop = value * 1.5 + 'px';
             // btn.style.marginTop = value * 1.5 + 'px';
-            console.log("ScrollY: " + window.scrollY)
+            // console.log("ScrollY: " + window.scrollY)
             if (window.scrollY > 50) {
                 // header.classList.add('scroll-active');
                 // header.style.backgroundColor = "rgb(129, 112, 145, " + value / 5 * 0.01 + ")";
                 if (rbg < 1) {
-                    console.log(rbg)
+                    //console.log(rbg)
                     header.style.backgroundColor = "rgb(255, 255, 255, " + rbg + ")";
                 }
                 else {
