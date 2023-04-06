@@ -10,7 +10,7 @@ class Chatbox{
             typing: document.querySelector(".typing-bubble")
         }
         this.state = false; // initial state of chatbox - chatbox is initially closed by default
-        this.messages = [{name: "welcome-msg", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio! How can I help you today?"}]; // array to store messages
+        this.messages = [{name: "welcome-msg", message: "Hi! I am Sydney Bot, thanks for taking a look at my creator's profolio!"},{name: "welcome-msg", message: "How can I help you today?"}]; // array to store messages
         this.loading = false;
     }
 

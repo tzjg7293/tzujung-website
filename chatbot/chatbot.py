@@ -5,13 +5,13 @@ import pickle
 import numpy as np
 
 from keras.models import load_model
-model = load_model('/home/ubuntu/my_website/chatbot/data/BaconChatbotData.h5')
+model = load_model('chatbot/data/BaconChatbotData.h5')
 import json
 import random
 
-intents = json.loads(open('/home/ubuntu/my_website/chatbot/intents.json').read())
-words = pickle.load(open('/home/ubuntu/my_website/chatbot/data/words.pkl','rb'))
-tags = pickle.load(open('/home/ubuntu/my_website/chatbot/data/classes.pkl','rb'))
+intents = json.loads(open('chatbot/intents.json').read())
+words = pickle.load(open('chatbot/data/words.pkl','rb'))
+tags = pickle.load(open('chatbot/data/classes.pkl','rb'))
 
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
