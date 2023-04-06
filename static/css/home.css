@@ -37,6 +37,7 @@ header .logo
     justify-content: center;
     flex: 1;
     display: flex;
+    margin: -10px;
 }
 header .navbar
 {
@@ -72,6 +73,11 @@ header ul li a
     border-radius: 20px;
 }
 header ul li a:hover, header ul li a.active
+{
+    background: white;
+    color: #2b1055;
+}
+.hovering:hover
 {
     background: white;
     color: #2b1055;
@@ -247,4 +253,8 @@ section h2 span
     bottom: 0;
     margin: auto;
     width: 20px;
+}
+#spline
+{
+    height: 300px;
 }

@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/home.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/timeline.css')}}">
-
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/animation.css')}}" />
     <!-- Fonts -->
 
     <!-- Favicons -->
@@ -42,8 +42,10 @@
         </div>
 
         <div class="logo">
-            <a href="#" class=""><img src="{{url_for('static', filename = 'img/logo.png')}}"
-                    width="50px"></a>
+            <a href="#" class="">
+                <!-- <img src="{{url_for('static', filename = 'img/logo.png')}}" width="50px"> -->
+                <canvas id="cat-logo" width="100px" height="70px"></canvas>
+            </a>
         </div>
 
         <div class="social">
@@ -61,7 +63,7 @@
                 </div>
                 <div class="chatbox-content--header">
                     <h4 class="chatbox-heading--header">Sydney Bot</h4>
-                    <p class="chatbox-description--header">Ask me a question</p>
+                    <p class="chatbox-description--header">Ask me a joke!</p>
                 </div>
             </div>
             <div class = 'container'> 
@@ -237,6 +239,7 @@
     <section class="text-center">
         <div class="summary">
             <h1 class="mb-5 align-items-center">I am open for work and any learning opportunities!</h1>
+            <canvas id="canvas3d"></canvas>
         </div>
     </section>
 
@@ -266,7 +269,7 @@
         let btn = document.getElementById("btn");
         let header = document.querySelector('header');
         let navbar_li = $(".navbar ul li");
-        let hover_a = $("header ul li a:hover");
+        let hover_a = $("header ul li a");
 
         // Let stars move across sky as you scroll
         window.addEventListener('scroll', function () {
@@ -293,16 +296,11 @@
                 }
                 $('header ul li a').css('color', 'black');
             }
-            else if (window.scrollY == 0)
-            {
-                // header_a.classList.add('active');
-            }
             else {
                 // header.style.backgroundColor = "rgb(129, 112, 145, 0)";
                 header.style.backgroundColor = "rgb(255, 255, 255, 0)";
                 $('header ul li a').css('color', 'white');
-                $('header ul li a:hover').css('color', '#2b1055');
-                // $('header ul li a:hover').css('color', 'black');
+                hover_a.classList.add('hovering');
             }
         })
     </script>
@@ -311,6 +309,15 @@
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; // tells you the root of this script
     </script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.284/build/runtime.js"
+        }
+      }
+    </script>
+    <script type="module" src="{{ url_for('static', filename='js/animation.js') }}"></script>
 </body>
 
 </html>
