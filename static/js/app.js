@@ -102,7 +102,7 @@ class Chatbox{
             // create a json obj to store the received msg
             let msg2 = {name: "Sydney Bot", message: r.answer}; // the key has to be the same (answer)
             this.messages.push(msg2); // add the msg to the msg array
-            setTimeout(() => this.updateChatbox(chatbox), 600);
+            setTimeout(() => this.updateChatbox(chatbox), 200);
             text_field.value = ""; // return/show nothing
         })
 	//.then(function (bodyText) {
