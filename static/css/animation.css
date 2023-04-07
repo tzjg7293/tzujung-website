@@ -1,3 +1,7 @@
 canvas {
   display: block;
 }
+.cat-logo{
+  width: 100px;
+  height: 100px;
+}
