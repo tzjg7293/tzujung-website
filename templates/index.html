@@ -21,7 +21,7 @@
 
     <!-- CSS Style sheets -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/home.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/chatbot.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/timeline.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/animation.css')}}" />
     <!-- Fonts -->
@@ -240,6 +240,7 @@
         <div class="summary">
             <h1 class="mb-5 align-items-center">I am open for work and any learning opportunities!</h1>
             <canvas id="canvas3d"></canvas>
+            <!-- <canvas id="cursor-trail"></canvas> -->
         </div>
     </section>
 
@@ -269,7 +270,7 @@
         let btn = document.getElementById("btn");
         let header = document.querySelector('header');
         let navbar_li = $(".navbar ul li");
-        let hover_a = $("header ul li a");
+        let hover_a = $('header ul li a');
 
         // Let stars move across sky as you scroll
         window.addEventListener('scroll', function () {
@@ -294,13 +295,16 @@
                 else {
                     header.style.backgroundColor = "rgb(255, 255, 255, 0.5)"
                 }
-                $('header ul li a').css('color', 'black');
+                hover_a.removeClass('hovering');
+                hover_a.addClass('not-hovering');
+                // $('header ul li a').css('color', 'black');
             }
             else {
-                // header.style.backgroundColor = "rgb(129, 112, 145, 0)";
+                hover_a.removeClass('not-hovering');
+                hover_a.addClass('hovering');
+                console.log("passed");
                 header.style.backgroundColor = "rgb(255, 255, 255, 0)";
-                $('header ul li a').css('color', 'white');
-                hover_a.classList.add('hovering');
+                // $('header ul li a').css('color', 'white');
             }
         })
     </script>

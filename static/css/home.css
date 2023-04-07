@@ -72,12 +72,20 @@ header ul li a
     color: white;
     border-radius: 20px;
 }
-header ul li a:hover, header ul li a.active
+.not-hovering
+{
+    color: black;
+}
+.hovering
+{
+    color: white;
+}
+.hovering:hover
 {
     background: white;
     color: #2b1055;
 }
-.hovering:hover
+header ul li a:hover, header ul li a.active
 {
     background: white;
     color: #2b1055;
