@@ -1,6 +1,57 @@
 /* @import url("https://fonts.googleapis.com/css?family=Poppins|Pathway+Gothic+One"); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+.button
+{
+    display: inline;
+    margin-top: 2em;
+    padding: 0.3em 0.8em;
+    border-radius: 0.8em;
+    cursor: pointer;
+}
+#resume, .experience-type
+{
+    text-decoration: none;
+    font-weight: 500;
+}
+.experience-type
+{
+  color: white;
+}
+.software-button, .medical-button
+{
+  background-color: #f197a3;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
+}
+.resume-button{
+  background-color: white;
+}
+#resume
+{
+  color: black;
+}
+.resume-button:hover
+{
+  background-color: black;
+}
+.resume-button:hover #resume
+{
+  color: white;
+}
+.software-button:hover, .medical-button:hover
+{
+    color: #f197a3;
+    background-color: white;
+}
+.click
+{
+    position: relative;
+    top: -2px;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+}
 .timeline {
   display: flex;
   margin: 0 auto;
@@ -8,6 +59,15 @@
   flex-direction: column;
   max-width: 1000px;
   position: relative;
+  perspective: 800;
+  -moz-perspective: 800;
+  -webkit-perspective: 800;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 .timeline-content-title {
   font-weight: 600;
@@ -23,13 +83,20 @@
   box-sizing: border-box;
   color: white;
   display: inline;
-  background-color: #446594;
   padding: 0.3em 0.8em;
   border-radius: 0.8em;
   /* color: #5a5f75; */
   font-family: Montserrat;
   font-weight: 500;
   /* line-height: 25px; */
+}
+.role 
+{
+  background-color: #446594;
+}
+.project
+{
+  background-color: #5a5f75;
 }
 /* timeline line itself */
 .timeline:before {
@@ -86,11 +153,20 @@
   flex-wrap: wrap;
   /* right: calc(-100% - 56px ); */
 }
+.timeline-info-left p
+{
+  width: 100%;
+  text-align: right;
+}
+.timeline-info-right p
+{
+  width: 100%;
+  text-align: left;
+}
 .date{
   font-size: 0.8em;
   color: #e3c0c0;
 }
-
 .timeline-item .timeline-content:nth-child(even) {
   align-self: flex-end;
   float: right;
@@ -157,7 +233,7 @@
 .timeline-header {
   width: 100%;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   position: relative;
 }
 .timeline-header-title {
@@ -166,6 +242,18 @@
   font-family: Montserrat;
   font-weight: 600;
   margin: 0;
+}
+.timeline-header-subtitle-container
+{
+  perspective: 800;
+  -moz-perspective: 800;
+  -webkit-perspective: 800;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 .timeline-header-subtitle {
   color: white;
@@ -190,4 +278,29 @@
   display: inline-block;
   font-family: Montserrat;
 }
-
+/* TIMELINE FLIP */
+.flipped {
+  transform: rotatey(-180deg);
+  -moz-transform: rotatey(-180deg);
+  -webkit-transform: rotatey(-180deg);
+}
+.face {
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.software-timeline {
+  display: block;
+}
+.flipped .software-timeline {
+  display: none;
+}
+.medical-timeline {
+  transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  display:none;
+}
+.flipped .medical-timeline {
+  display:block;
+}
