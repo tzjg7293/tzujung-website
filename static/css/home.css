@@ -37,6 +37,9 @@ header .logo
     justify-content: center;
     flex: 1;
     display: flex;
+    margin: -10px;
+    width: 50px;
+    height: 50px;
 }
 header .navbar
 {
@@ -70,6 +73,19 @@ header ul li a
     /* color: white; */
     color: white;
     border-radius: 20px;
+}
+.not-hovering
+{
+    color: black;
+}
+.hovering
+{
+    color: white;
+}
+.hovering:hover
+{
+    background: white;
+    color: #2b1055;
 }
 header ul li a:hover, header ul li a.active
 {
@@ -126,7 +142,8 @@ section
     align-items: center;
     overflow: hidden;
 }
-section img:not(#sydney-profile-img)
+/* section img:not(#sydney-profile-img, .hobby) */
+.bg-img
 {
     position: absolute;
     top: 0;
@@ -188,6 +205,32 @@ section h2 span
     justify-content: center;
     align-items: center;
 }
+.reading
+{
+    display: inline-block;
+}
+.hobby
+{
+    display: inline-flex;
+    background-color: #e3c0c0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 1em;
+}
+.hobby img
+{
+    width: 35px;
+    margin: auto;
+}
+.label
+{
+    display: none;
+}
+.hobby:hover+.label
+{
+    display: block;
+}
 #sydney-profile-img
 {
     height: auto;
@@ -220,4 +263,8 @@ section h2 span
     bottom: 0;
     margin: auto;
     width: 20px;
+}
+#spline
+{
+    height: 300px;
 }

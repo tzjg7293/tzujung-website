@@ -1,29 +1,26 @@
-import torch
-import torch.nn as nn
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense, Activation, Dropout
+from keras.optimizers import SGD
+import random
 
-# Create a class called NeuralNetwork (can be any name) derived from nn.Module
-class NeuralNetwork(nn.Module):
-    # Define the init which gets self
-    def __init__(self, input_size, hidden_size, num_classes): # This will be a feed forward neural net with 2 hidden layers
-        super(NeuralNetwork, self).__init__()
-        # Create 3 linear layers - input_size and num_classes must be fixed but the hidden layer's sizes (hidden_size) can vary
-        self.l1 = nn.Linear(input_size, hidden_size)
-        self.l2 = nn.Linear(hidden_size, hidden_size)
-        self.l3 = nn.Linear(hidden_size, num_classes)
-        # Create an activation function in between
-        self.relu = nn.ReLU()
+from train import train_x, train_y
 
-    # implement the forward path
-    def forward(self, x):
-        # Passing the output from each linear layer to the next
-        # Linear layer 1
-        out = self.l1(x) # Gets x as input first
-        out = self.relu(out)    # Apply activation funciton in between, this gets x from above
-        # Linear layer 2
-        out = self.l2(out) # Previous output of linear layer 1 as input
-        out = self.relu(out)    # Apply activation funciton in between, this uses the output from above as the input
-        # Linear layer 3
-        out = self.l3(out) # Previous output of linear layer 2 as input
-        # No activation function and no softmax for linear layer 3 since later when we apply the CrossEntropyLoss, it will already automatically apply to linear layer 3 as well
-        return out # Return the output
+# Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
+# equal to number of intents to predict output intent with softmax
+model = Sequential()
+model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(len(train_y[0]), activation='softmax')) 
 
+# Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
+sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+
+#fitting and saving the model 
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+model.save('chatbot_model.h5', hist)
+
+print("model created")
