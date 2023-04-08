@@ -98,6 +98,10 @@
 {
   background-color: #5a5f75;
 }
+.volunteer
+{
+  background-color: green;
+}
 /* timeline line itself */
 .timeline:before {
   position: absolute;
@@ -166,6 +170,10 @@
 .date{
   font-size: 0.8em;
   color: #e3c0c0;
+}
+.timeline-item
+{
+  backface-visibility: hidden
 }
 .timeline-item .timeline-content:nth-child(even) {
   align-self: flex-end;

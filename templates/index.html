@@ -111,18 +111,19 @@
             <p>The University of British Columbia<br><span class="fst-italic">
                     Double major in Computer Science and Bio-Chemistry</span></p>
             <p class="fw-bold mb-1">Hobbies</p>
-            <div class="reading">
+            <!-- <div class="reading"> -->
                 <div class="hobby">
                     <img src="{{url_for('static', filename = 'img/hobby/reading.png')}}">
                 </div>
-                <div class="label">Reading</div>
-            </div>
+                <!-- <div class="label">Reading</div> -->
+            <!-- </div> -->
             <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/coding.png')}}"></div>
             <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/snowboarding.png')}}"></div>
             <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/music.png')}}"></div>
             <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/painting.png')}}"></div>
             <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/crafting.png')}}"></div>
             <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/cooking.png')}}"></div>
+            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/volunteering.png')}}"></div>
         </div>
         <div class="bio">
 
@@ -138,7 +139,7 @@
                 <h3 class="timeline-header-subtitle software-timeline mb-3">Related work and technical experience</h3>
                 <h3 class="timeline-header-subtitle medical-timeline mb-3">Other work and volunteer experiences</h3>
             </div>
-            <div class = "mb-5">
+            <div class = "mb-4">
                 <div class="resume-button button">
                     <a id="resume" class="" href="{{url_for('static', filename = 'pdf/sydney-resume.pdf')}}" target="_blank" download>
                         Download my resume
@@ -161,7 +162,7 @@
             <div class = "software-timeline face">
                 <div class="timeline-item d-flex flex-row justify-content-between">
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-3">Food Saviour</h2>
+                        <h2 class="timeline-content-title text-uppercase mb-3">Food Saviour Web Platform</h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2 ">Software Engineering Lead</p>
                         </div>
@@ -295,17 +296,60 @@
             </div>
             <!-- MEDICAL TIMELINE -->
             <div class = "medical-timeline face">
+
+                <div class="timeline-item d-flex flex-row">
+                    <div class="timeline-info timeline-info-left align-self-center d-flex justify-content-end">
+                        <p class="fs-6 company m-0">The University of British Columbia</p>
+                        <p class="date m-0 text-uppercase">Jan 2022 - Apr 2023</p>
+                    </div>
+                    <div class="flex-fill"></div>
+                    <div class="timeline-content">
+                        <h2 class="timeline-content-title text-uppercase mb-3">UBC Student Housing and Community Services</h2>
+                        <div>
+                            <p class="timeline-content-desc role fs-6 mt-2">Residential Advisor</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="timeline-item d-flex flex-row justify-content-between">
+                    <div class="timeline-content">
+                        <h2 class="timeline-content-title text-uppercase mb-3">UBC Risk Management and Student Services</h2>
+                        <div>
+                            <p class="timeline-content-desc role fs-6 mt-2">COVID-19 Health Ambassador</p>
+                        </div>
+                    </div>
+                    <div class="flex-fill"></div>
+                    <div class="timeline-info timeline-info-right align-self-center">
+                        <p class="fs-6 company m-0">The University of British Columbia</p>
+                        <p class="date m-0 text-uppercase">Sep 2021 - May 2022</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item d-flex flex-row">
+                    <div class="timeline-info timeline-info-left align-self-center d-flex justify-content-end">
+                        <p class="fs-6 company m-0">Kelowna General Hospital</p>
+                        <p class="date m-0 text-uppercase">JUN 2021 - SEP 2021</p>
+                    </div>
+                    <div class="flex-fill"></div>
                     <div class="timeline-content">
                         <h2 class="timeline-content-title text-uppercase mb-3">Out patient lab</h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">COVID-19 Lab Technician</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="timeline-item d-flex flex-row justify-content-between">
+                    <div class="timeline-content">
+                        <h2 class="timeline-content-title text-uppercase mb-3">Piano and Music Theory</h2>
+                        <div>
+                            <p class="timeline-content-desc role fs-6 mt-2">Instructor</p>
+                        </div>
+                    </div>
                     <div class="flex-fill"></div>
                     <div class="timeline-info timeline-info-right align-self-center">
-                        <p class="fs-6 company m-0">Kelowna General Hospital</p>
-                        <p class="date m-0 text-uppercase">JUN 2021 - SEP 2021</p>
+                        <p class="fs-6 company m-0">Wentworth Music School</p>
+                        <p class="date m-0 text-uppercase">May 2021 - Apr 2022</p>
                     </div>
                 </div>
 
@@ -318,7 +362,10 @@
                     <div class="timeline-content">
                         <h2 class="timeline-content-title text-uppercase mb-3">Kelowna General Hospital Foundation</h2>
                         <div>
-                            <p class="timeline-content-desc role fs-6 mt-2">Volunteer Administrative Assistant</p>
+                            <p class="timeline-content-desc role fs-6 mt-2">Administrative Assistant</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="timeline-content-desc volunteer fs-6 mt-2">Volunteer</p>
                         </div>
                     </div>
                 </div>
@@ -327,7 +374,10 @@
                     <div class="timeline-content">
                         <h2 class="timeline-content-title text-uppercase mb-3">Emergency First Response Team</h2>
                         <div>
-                            <p class="timeline-content-desc role fs-6 mt-2">Volunteer First Responder</p>
+                            <p class="timeline-content-desc role fs-6 mt-2">First Responder</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="timeline-content-desc volunteer fs-6 mt-2">Volunteer</p>
                         </div>
                     </div>
                     <div class="flex-fill"></div>
@@ -346,7 +396,10 @@
                     <div class="timeline-content">
                         <h2 class="timeline-content-title text-uppercase mb-3">Volunteer Abroad - Thailand, Chiang Mai</h2>
                         <div>
-                            <p class="timeline-content-desc role fs-6 mt-2">Volunteer</p>
+                            <p class="timeline-content-desc role fs-6 mt-2">Elementary School Instructor</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="timeline-content-desc volunteer fs-6 mt-2">Volunteer</p>
                         </div>
                     </div>
                 </div>
@@ -356,6 +409,9 @@
                         <h2 class="timeline-content-title text-uppercase mb-3">Canadian board of Governors Youth Council</h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">Youth Councilor</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="timeline-content-desc volunteer fs-6 mt-2">Volunteer</p>
                         </div>
                     </div>
                     <div class="flex-fill"></div>

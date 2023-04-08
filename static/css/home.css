@@ -136,7 +136,7 @@ section
     position: relative;
     width: 100%;
     height: 100vh;
-    padding: 100px;
+    padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,16 +195,6 @@ section h2 span
     /* transform: translateY(170px); */
     margin: 5;
 }
-.profile-img
-{
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .reading
 {
     display: inline-block;
@@ -231,11 +221,18 @@ section h2 span
 {
     display: block;
 }
+.profile-img
+{
+    position: relative;
+    width: 20vw;
+    overflow: hidden;
+    border-radius: 50%;
+}
 #sydney-profile-img
 {
-    height: auto;
-    width: 170%;
-    margin-left: -15%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 #spline
 {
