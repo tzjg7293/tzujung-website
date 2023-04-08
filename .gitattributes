@@ -1,4 +1,2 @@
-* linguist-vendored
-* linguist-vendored=true
 app/* linguist-documentation=false
-app/* linguist-vendored
+# app/* linguist-vendored
