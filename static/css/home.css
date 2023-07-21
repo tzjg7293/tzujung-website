@@ -195,31 +195,34 @@ section h2 span
     /* transform: translateY(170px); */
     margin: 5;
 }
-.reading
-{
+.hobby{
     display: inline-block;
+    position: relative;
+    margin-right: 1em;
+    text-align: center;
 }
-.hobby
+.hobby-container
 {
     display: inline-flex;
     background-color: #e3c0c0;
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    margin-right: 1em;
 }
-.hobby img
+.hobby-container img
 {
     width: 35px;
     margin: auto;
 }
-.label
-{
-    display: none;
-}
-.hobby:hover+.label
-{
-    display: block;
+.hobby_label{
+    position: absolute;
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%);
+    background-color: #446594;
+    border-radius: 5%;
+    margin-top: 0.3em;
+    padding: 0.1em 0.5em;
+    color: white;
 }
 .profile-img
 {

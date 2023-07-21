@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -55,7 +54,7 @@
         </div>
     </header>
     <div class="chatbox">
-        <div class="chatbox-support">
+        <div class="chatbox-support chatbox--hidden chatbox--visuallyhidden">
             <div class="chatbox-header text-start">
                 <div class="chatbox-image--header">
                     <!-- https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png -->
@@ -110,44 +109,73 @@
             <p class="fw-bold mb-1">Education</p>
             <p>The University of British Columbia<br><span class="fst-italic">
                     Double major in Computer Science and Bio-Chemistry</span></p>
-            <p class="fw-bold mb-1">Hobbies</p>
-            <!-- <div class="reading"> -->
-                <div class="hobby">
-                    <img src="{{url_for('static', filename = 'img/hobby/reading.png')}}">
+            <div class="hobby-section d-flex row">
+                <div class="fw-bold mb-1">Hobbies</div>
+                <div class="hobbies">
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Reading" src="{{url_for('static', filename = 'img/hobby/reading.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Coding" src="{{url_for('static', filename = 'img/hobby/coding.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Snowboarding"
+                                src="{{url_for('static', filename = 'img/hobby/snowboarding.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Music" src="{{url_for('static', filename = 'img/hobby/music.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Art" src="{{url_for('static', filename = 'img/hobby/painting.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Crochet" src="{{url_for('static', filename = 'img/hobby/crafting.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Cooking" src="{{url_for('static', filename = 'img/hobby/cooking.png')}}">
+                        </div>
+                    </div>
+                    <div class="hobby">
+                        <div class="hobby-container">
+                            <img alt="Volunteering"
+                                src="{{url_for('static', filename = 'img/hobby/volunteering.png')}}">
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="label">Reading</div> -->
-            <!-- </div> -->
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/coding.png')}}"></div>
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/snowboarding.png')}}"></div>
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/music.png')}}"></div>
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/painting.png')}}"></div>
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/crafting.png')}}"></div>
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/cooking.png')}}"></div>
-            <div class="hobby"><img src="{{url_for('static', filename = 'img/hobby/volunteering.png')}}"></div>
-        </div>
-        <div class="bio">
-
+            </div>
         </div>
     </section>
-    <!-- <section> -->
-    <!-- <div class="sec" id="sec"> -->
     <!-- Work timeline -->
     <div class="timeline-container" id="timeline">
         <div class="timeline-header">
             <h2 class="timeline-header-title">Experience</h2>
-            <div class = "timeline-header-subtitle-container">
+            <div class="timeline-header-subtitle-container">
                 <h3 class="timeline-header-subtitle software-timeline mb-3">Related work and technical experience</h3>
                 <h3 class="timeline-header-subtitle medical-timeline mb-3">Other work and volunteer experiences</h3>
             </div>
-            <div class = "mb-4">
+            <div class="mb-4">
                 <div class="resume-button button">
-                    <a id="resume" class="" href="{{url_for('static', filename = 'pdf/sydney-resume.pdf')}}" target="_blank" download>
+                    <a id="resume" class="" href="{{url_for('static', filename = 'pdf/sydney-resume.pdf')}}"
+                        target="_blank" download>
                         Download my resume
                         <img class="click align-self-center" src="{{url_for('static', filename = 'img/click.png')}}">
                     </a>
                 </div>
             </div>
-            <div class="m-auto experience-type">
+            <div class="m-auto">
                 <div id="software-flip" class="me-1 software-button button">
                     Software experiences
                     <img class="click align-self-center" src="{{url_for('static', filename = 'img/click.png')}}">
@@ -159,7 +187,7 @@
             </div>
         </div>
         <div class="timeline">
-            <div class = "software-timeline face">
+            <div class="software-timeline face">
                 <div class="timeline-item d-flex flex-row justify-content-between">
                     <div class="timeline-content">
                         <h2 class="timeline-content-title text-uppercase mb-3">Food Saviour Web Platform</h2>
@@ -176,7 +204,6 @@
 
                 <div class="timeline-item d-flex flex-row">
                     <div class="timeline-info timeline-info-left align-self-center d-flex justify-content-end">
-                        <!-- <p class="fs-6 company m-0">The University of British Columbia</p> -->
                         <p class="date m-0 text-uppercase">March 2023</p>
                     </div>
                     <div class="flex-fill"></div>
@@ -194,7 +221,8 @@
 
                 <div class="timeline-item d-flex flex-row justify-content-between">
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-3">Natural Language Processing & Body Translation Research</h2>
+                        <h2 class="timeline-content-title text-uppercase mb-3">Natural Language Processing & Body
+                            Translation Research</h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2 ">ML/AI/NLP Researcher</p>
                         </div>
@@ -213,10 +241,13 @@
                     </div>
                     <div class="flex-fill"></div>
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-1">Canadian Stratospheric Balloon Experiment Design Challenge<br>(CAN-SBX) - 
+                        <h2 class="timeline-content-title text-uppercase mb-1">Canadian Stratospheric Balloon Experiment
+                            Design Challenge<br>(CAN-SBX) -
                             <span class="highlight">Winner</span>
                         </h2>
-                        <a class="link d-block mb-3" href="https://www.asc-csa.gc.ca/eng/sciences/balloons/campaign-2022.asp">Government of Canada - CSA</a>
+                        <a class="link d-block mb-3"
+                            href="https://www.asc-csa.gc.ca/eng/sciences/balloons/campaign-2022.asp">Government of
+                            Canada - CSA</a>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">Software Engineer Lead</p>
                         </div>
@@ -231,12 +262,12 @@
                         <h2 class="timeline-content-title text-uppercase m-0">Parcade</h2>
                         <a class="link d-block mb-3"
                             href="https://devpost.com/software/parcade">https://devpost.com/software/parcade</a>
-                            <div>
-                                <p class="timeline-content-desc role fs-6 mt-2">Software Engineer Lead</p>
-                            </div>
-                            <div class="mt-2">
-                                <p class="timeline-content-desc project fs-6 mt-2">Technical Project</p>
-                            </div>
+                        <div>
+                            <p class="timeline-content-desc role fs-6 mt-2">Software Engineer Lead</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="timeline-content-desc project fs-6 mt-2">Technical Project</p>
+                        </div>
                     </div>
                     <div class="flex-fill"></div>
                     <div class="timeline-info timeline-info-right align-self-center">
@@ -295,7 +326,7 @@
                 </div>
             </div>
             <!-- MEDICAL TIMELINE -->
-            <div class = "medical-timeline face">
+            <div class="medical-timeline face">
 
                 <div class="timeline-item d-flex flex-row">
                     <div class="timeline-info timeline-info-left align-self-center d-flex justify-content-end">
@@ -304,7 +335,8 @@
                     </div>
                     <div class="flex-fill"></div>
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-3">UBC Student Housing and Community Services</h2>
+                        <h2 class="timeline-content-title text-uppercase mb-3">UBC Student Housing and Community
+                            Services</h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">Residential Advisor</p>
                         </div>
@@ -313,7 +345,8 @@
 
                 <div class="timeline-item d-flex flex-row justify-content-between">
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-3">UBC Risk Management and Student Services</h2>
+                        <h2 class="timeline-content-title text-uppercase mb-3">UBC Risk Management and Student Services
+                        </h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">COVID-19 Health Ambassador</p>
                         </div>
@@ -394,7 +427,8 @@
                     </div>
                     <div class="flex-fill"></div>
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-3">Volunteer Abroad - Thailand, Chiang Mai</h2>
+                        <h2 class="timeline-content-title text-uppercase mb-3">Volunteer Abroad - Thailand, Chiang Mai
+                        </h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">Elementary School Instructor</p>
                         </div>
@@ -406,7 +440,8 @@
 
                 <div class="timeline-item d-flex flex-row justify-content-between">
                     <div class="timeline-content">
-                        <h2 class="timeline-content-title text-uppercase mb-3">Canadian board of Governors Youth Council</h2>
+                        <h2 class="timeline-content-title text-uppercase mb-3">Canadian board of Governors Youth Council
+                        </h2>
                         <div>
                             <p class="timeline-content-desc role fs-6 mt-2">Youth Councilor</p>
                         </div>
@@ -431,7 +466,6 @@
         <div class="summary">
             <h1 class="mb-5 align-items-center">I am open for work and any learning opportunities!</h1>
             <canvas id="canvas3d"></canvas>
-            <!-- <canvas id="cursor-trail"></canvas> -->
         </div>
     </section>
 
@@ -446,8 +480,6 @@
         });
         $('#msg-container').scroll(function () {
             var pos = $('#msg-container').scrollBottom();
-            //console.log("scrolling");
-            //console.log(pos);
             {
                 alert('top of the div');
             }
@@ -466,20 +498,13 @@
         window.addEventListener('scroll', function () {
             let value = window.scrollY;
             var rbg = value / 5 * 0.01;
-            //console.log("rbg: " + rbg);
             stars.style.left = value * 0.25 + 'px';
             moon.style.top = value * 1.05 + 'px';
             mountains_behind.style.top = value * 0.5 + 'px';
             mountains_front.style.width = 100 + value / 15 + "%";
-            // text.style.marginRight = value * 4 + 'px';
             text.style.marginTop = value * 1.5 + 'px';
-            // btn.style.marginTop = value * 1.5 + 'px';
-            // console.log("ScrollY: " + window.scrollY)
             if (window.scrollY > 50) {
-                // header.classList.add('scroll-active');
-                // header.style.backgroundColor = "rgb(129, 112, 145, " + value / 5 * 0.01 + ")";
                 if (rbg < 1) {
-                    //console.log(rbg)
                     header.style.backgroundColor = "rgb(255, 255, 255, " + rbg + ")";
                 }
                 else {
@@ -487,38 +512,22 @@
                 }
                 hover_a.removeClass('hovering');
                 hover_a.addClass('not-hovering');
-                // $('header ul li a').css('color', 'black');
             }
             else {
                 hover_a.removeClass('not-hovering');
                 hover_a.addClass('hovering');
                 console.log("passed");
                 header.style.backgroundColor = "rgb(255, 255, 255, 0)";
-                // $('header ul li a').css('color', 'white');
             }
         });
-
-        // TIMELINE FLIP
-        $('#medical-flip').click(function (e) {
-            var $timeline = $('.timeline');
-            var $timeline_subtitle = $(".timeline-header-subtitle-container");
-            $timeline.addClass('flipped');
-            $timeline_subtitle.addClass('flipped');
-        });
-        $('#software-flip').click(function (e) {
-            var $timeline = $('.timeline');
-            var $timeline_subtitle = $(".timeline-header-subtitle-container");
-            $timeline.removeClass('flipped');
-            $timeline_subtitle.removeClass('flipped');
-        });
-
     </script>
     <script src="{{url_for('static', filename = 'js/timeline.js')}}"></script>
-    <script type=text/javascript>
-        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; // tells you the root of this script
-    </script>
+    <script src="{{url_for('static', filename = 'js/hobby.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+    <!-- tells you the root of this script -->
     <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/animation.js') }}"></script>
     <script type="importmap">
       {
         "imports": {
@@ -526,7 +535,6 @@
         }
       }
     </script>
-    <script type="module" src="{{ url_for('static', filename='js/animation.js') }}"></script>
 </body>
 
 </html>

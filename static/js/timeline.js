@@ -1,3 +1,26 @@
+// TIMELINE FLIP
+$('#medical-flip').click(function (e) {
+  var $timeline = $('.timeline');
+  var $timeline_subtitle = $(".timeline-header-subtitle-container");
+  $('#medical-flip').css("background-color", "white");
+  $('#medical-flip').css("color", "#f197a3");
+  $('#software-flip').css("background-color", "#f197a3");
+  $('#software-flip').css("color", "white");
+  $timeline.addClass('flipped');
+  $timeline_subtitle.addClass('flipped');
+});
+$('#software-flip').click(function (e) {
+  var $timeline = $('.timeline');
+  var $timeline_subtitle = $(".timeline-header-subtitle-container");
+  $('#software-flip').css("background-color", "white");
+  $('#software-flip').css("color", "#f197a3");
+  $('#medical-flip').css("background-color", "#f197a3");
+  $('#medical-flip').css("color", "white");
+  $timeline.removeClass('flipped');
+  $timeline_subtitle.removeClass('flipped');
+});
+
+// TIMELINE SCROLL ANIMATION
 (function ($) {
   $.fn.timeline = function () {
     var selectors = {

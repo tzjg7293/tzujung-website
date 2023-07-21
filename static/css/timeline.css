@@ -14,13 +14,17 @@
     text-decoration: none;
     font-weight: 500;
 }
-.experience-type
-{
-  color: white;
-}
-.software-button, .medical-button
+.medical-button
 {
   background-color: #f197a3;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
+}
+.software-button
+{
+  background-color: white;
+  color: #f197a3;
   padding: 0.5em 1em;
   border-radius: 1.5em;
 }
