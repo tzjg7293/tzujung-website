@@ -136,7 +136,7 @@ section
     position: relative;
     width: 100%;
     height: 100vh;
-    padding: 100px;
+    padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,74 +195,47 @@ section h2 span
     /* transform: translateY(170px); */
     margin: 5;
 }
-.profile-img
-{
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.reading
-{
+.hobby{
     display: inline-block;
+    position: relative;
+    margin-right: 1em;
+    text-align: center;
 }
-.hobby
+.hobby-container
 {
     display: inline-flex;
     background-color: #e3c0c0;
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    margin-right: 1em;
 }
-.hobby img
+.hobby-container img
 {
     width: 35px;
     margin: auto;
 }
-.label
-{
-    display: none;
+.hobby_label{
+    position: absolute;
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%);
+    background-color: #446594;
+    border-radius: 5%;
+    margin-top: 0.3em;
+    padding: 0.1em 0.5em;
+    color: white;
 }
-.hobby:hover+.label
+.profile-img
 {
-    display: block;
+    position: relative;
+    width: 20vw;
+    overflow: hidden;
+    border-radius: 50%;
 }
 #sydney-profile-img
 {
-    height: auto;
-    width: 170%;
-    margin-left: -15%;
-}
-.button
-{
-    display: inline;
-    background-color: #f197a3;
-    margin-top: 2em;
-    padding: 0.3em 0.8em;
-    border-radius: 0.8em;
-}
-#resume
-{
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-}
-.button:hover, #resume:hover
-{
-    color: #f197a3;
-    background-color: white;
-}
-.click
-{
-    position: relative;
-    top: -2px;
-    bottom: 0;
-    margin: auto;
-    width: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 #spline
 {
